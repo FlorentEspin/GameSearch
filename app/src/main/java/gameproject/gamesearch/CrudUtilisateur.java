@@ -5,4 +5,6 @@ package gameproject.gamesearch;
  */
 public class CrudUtilisateur {
 
+    public Utilisateur
+
 }

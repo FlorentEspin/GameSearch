@@ -1,10 +1,12 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -25,11 +27,26 @@ public class StartScreen extends ActionBarActivity {
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
         titre.setTypeface(custom_font);
 
-        Button liste_jeux = (Button) findViewById(R.id.button_jeux);
+        final Button liste_jeux = (Button) findViewById(R.id.button_jeux);
         liste_jeux.setTypeface(custom_font);
+        liste_jeux.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentJeux = new Intent(StartScreen.this, Liste_jeux.class);
+                startActivity(intentJeux);
+            }
+        });
 
-        Button liste_utilisateurs = (Button) findViewById(R.id.button_utilisateurs);
+        final Button liste_utilisateurs = (Button) findViewById(R.id.button_utilisateurs);
         liste_utilisateurs.setTypeface(custom_font);
+        liste_utilisateurs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUtilisateurs = new Intent(StartScreen.this, Liste_utilisateurs.class);
+                startActivity(intentUtilisateurs);
+            }
+        });
+
 
     }
 

@@ -30,9 +30,7 @@ public class StartScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
 
-        //GET YOUR USERS HERE !!!!!!
-     List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
         String T="";
 

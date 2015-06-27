@@ -13,6 +13,8 @@ public class Liste_jeux extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_jeux);
+
+
     }
 
     @Override

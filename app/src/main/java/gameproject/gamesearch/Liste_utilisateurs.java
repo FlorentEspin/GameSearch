@@ -5,6 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.List;
 
 
 public class Liste_utilisateurs extends Activity {
@@ -13,6 +18,12 @@ public class Liste_utilisateurs extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_utilisateurs);
+
+        //GET YOUR USERS HERE !!!!!!
+        List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();
+
+        TextView listeUtilisateurs = (TextView) findViewById(R.id.listeUtilisateurs);
+        listeUtilisateurs.setText(lesUtilisateurs.toString());
     }
 
     @Override

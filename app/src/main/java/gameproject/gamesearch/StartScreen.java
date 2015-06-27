@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -20,9 +21,15 @@ public class StartScreen extends ActionBarActivity {
        List<Utilisateur> a = CrudUtilisateur.getAllUser();
         String t ="";
 
-        TextView txt = (TextView)findViewById(R.id.titre);
+        TextView titre = (TextView)findViewById(R.id.titre);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
-        txt.setTypeface(custom_font);
+        titre.setTypeface(custom_font);
+
+        Button liste_jeux = (Button) findViewById(R.id.button_jeux);
+        liste_jeux.setTypeface(custom_font);
+
+        Button liste_utilisateurs = (Button) findViewById(R.id.button_utilisateurs);
+        liste_utilisateurs.setTypeface(custom_font);
 
     }
 

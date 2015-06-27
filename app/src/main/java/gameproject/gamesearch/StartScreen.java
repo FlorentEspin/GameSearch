@@ -1,9 +1,11 @@
 package gameproject.gamesearch;
 
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -17,6 +19,10 @@ public class StartScreen extends ActionBarActivity {
 
        List<Utilisateur> a = CrudUtilisateur.getAllUser();
         String t ="";
+
+        TextView txt = (TextView)findViewById(R.id.titre);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+        txt.setTypeface(custom_font);
 
     }
 

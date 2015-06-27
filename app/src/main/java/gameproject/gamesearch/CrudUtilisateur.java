@@ -26,10 +26,10 @@ public class CrudUtilisateur {
     public static List<Utilisateur> getAllUser()
     {
        final List<Utilisateur> users = new ArrayList<Utilisateur>();
-        api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
+        api.getAllUser(new Callback<List<Utilisateur>>() {
             @Override
-            public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
-                users.addAll((ArrayList<Utilisateur>) utilisateurs);
+            public void success(List<Utilisateur> utilisateurs, Response response) {
+                users.addAll(utilisateurs);
             }
 
             @Override
@@ -52,13 +52,13 @@ public class CrudUtilisateur {
 
                 @Override
                 public void failure(RetrofitError error) {
-                    Log.i("ERROR ENCOUNTER IN CREATEUSER : ",error.getMessage());
+                    Log.i("ERROR",error.getMessage());
                 }
             });
         }
         catch(Exception e)
         {
-            Log.i("ERROR ENCOUNTER IN CREATEUSER, BEFORE CONNECTING TO THE WEB SERVICE. ",e.getMessage());
+            Log.i("ERROR"," ENCOUNTER IN CREATEUSER, BEFORE CONNECTING TO THE WEB SERVICE "+e.getMessage());
         }
     }
 }

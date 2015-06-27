@@ -3,7 +3,15 @@ package gameproject.gamesearch;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Utilisateur {
+    @SerializedName("$id")
+    @Expose
+    private int ID;
+    @SerializedName("$values")
+    @Expose
+    private List<Utilisateur> value;
     @SerializedName("ID_UTILISATEUR")
     @Expose
     private int ID_UTILISATEUR;

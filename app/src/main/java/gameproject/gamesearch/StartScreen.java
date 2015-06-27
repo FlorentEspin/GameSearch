@@ -4,13 +4,23 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Objects;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class StartScreen extends ActionBarActivity {
@@ -20,8 +30,13 @@ public class StartScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
 
-       List<Utilisateur> a = CrudUtilisateur.getAllUser();
-        String t ="";
+        //GET YOUR USERS HERE !!!!!!
+     List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        String T="";
+
+
 
         TextView titre = (TextView)findViewById(R.id.titre);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");

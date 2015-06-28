@@ -21,11 +21,11 @@ public class DisplayText extends ActionBarActivity
 
         setContentView(R.layout.activity_liste_utilisateurs);
 
-        Intent      intent = getIntent();
-        TextView    textView = (TextView) findViewById(R.id.listeUtilisateurs);
-        String      text = intent.getStringExtra("text");
+       //Intent      intent = getIntent();
+       //TextView    textView = (TextView) findViewById(R.id.listeUtilisateurs);
+       //String      text = intent.getStringExtra("text");
 
-        textView.setText(text);
+       //textView.setText(text);
 
     }
 

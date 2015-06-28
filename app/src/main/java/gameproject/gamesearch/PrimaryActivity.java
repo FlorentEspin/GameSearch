@@ -2,24 +2,20 @@ package gameproject.gamesearch;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.gson.Gson;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import retrofit.Callback;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import gameproject.gamesearch.recyclerview.ItemData;
+import gameproject.gamesearch.recyclerview.MyAdapter;
 
 
 public class PrimaryActivity extends ActionBarActivity {
@@ -27,41 +23,23 @@ public class PrimaryActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.primary_activity);
-
-        List<Editeur> testEditeur = new ArrayList<Editeur>();
-        List<Genre> testGenre = new ArrayList<Genre>();
-        Norme testNorme =new Norme();
-
-        Create request = new Create();
-        final ApiService api=   request.getApiService();
+        setContentView(R.layout.activity_main);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
 
-        Date d = new Date();
-       // Jeu unjeuTest = new Jeu(100,"test", d,"test","test", testEditeur,testGenre, testNorme);
-        Utilisateur unUtilisateur = new Utilisateur(999,"test","test");
-        Gson gson = new Gson();
-
-        String json=  gson.toJson(unUtilisateur);
-       // ApiService client = (ApiService) ServiceGenerator.createService(Utilisateur.class,"http://localhost:3229");
-
+        ItemData itemsData[] = { new ItemData("Help",R.drawable.help),
+                new ItemData("Delete",R.drawable.content_discard),
+                new ItemData("Cloud",R.drawable.collections_cloud),
+                new ItemData("Favorite",R.drawable.rating_favorite),
+                new ItemData("Like",R.drawable.rating_good),
+                new ItemData("Rating",R.drawable.rating_important)};
 
 
-//Create request = new Create();
-           //api.getContent(new Callback<Jeu>() {
-           //    @Override
-           //    public void success(Jeu jeu, Response response) {
-           //        jeu.getNomJeu();
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-           //    }
-
-           //    @Override
-           //    public void failure(RetrofitError error) {
-           //        Log.i("JESUISLERREUR                ",error.getMessage());
-           //    }
-           //});
-           //String a = "";
+     //  MyAdapter mAdapter = new MyAdapter(itemsData);
+      //  recyclerView.setAdapter(mAdapter);
+      //  recyclerView.setItemAnimator(new DefaultItemAnimator());
 
     }
 

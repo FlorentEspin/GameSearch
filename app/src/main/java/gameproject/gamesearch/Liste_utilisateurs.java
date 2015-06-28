@@ -3,13 +3,25 @@ package gameproject.gamesearch;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.squareup.okhttp.internal.Util;
+
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import gameproject.gamesearch.recyclerview.ItemData;
+import gameproject.gamesearch.recyclerview.MyAdapter;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class Liste_utilisateurs extends Activity {
@@ -18,12 +30,37 @@ public class Liste_utilisateurs extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_utilisateurs);
+        Create request = new Create();
+        final CRUD api=   request.getApiService();
 
-        //GET YOUR USERS HERE !!!!!!
-        List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();
 
-        TextView listeUtilisateurs = (TextView) findViewById(R.id.listeUtilisateurs);
-        listeUtilisateurs.setText(lesUtilisateurs.toString());
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        try {
+           api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
+               @Override
+               public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
+                   MyAdapter mAdapter = new MyAdapter(utilisateurs);
+                   recyclerView.setAdapter(mAdapter);
+                   recyclerView.setItemAnimator(new DefaultItemAnimator());
+               }
+
+               @Override
+               public void failure(RetrofitError error) {
+
+               }
+           });
+
+        }
+        catch (Exception e)
+        {
+            e.toString();
+        }
+
+        //allUser.add(new Utilisateur(1,"1","1"));
+        //allUser.add(new Utilisateur(1,"2","2"));
+
+
     }
 
     @Override

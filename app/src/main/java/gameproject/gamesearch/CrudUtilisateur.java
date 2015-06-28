@@ -1,9 +1,5 @@
 package gameproject.gamesearch;
 
-import android.util.Log;
-
-import com.squareup.okhttp.internal.Util;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +13,7 @@ import retrofit.client.Response;
 public class CrudUtilisateur {
 
     private static Create request = new Create();
-    private static ApiService api =  request.getApiService();
+    private static CRUD api =  request.getApiService();
   //  public Utilisateur getUserById(int id)
   //  {
 //
@@ -26,17 +22,7 @@ public class CrudUtilisateur {
     public static List<Utilisateur> getAllUser()
     {
       final   ArrayList<Utilisateur> users = new ArrayList<Utilisateur>();
-        api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
-            @Override
-            public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
-               System.arraycopy(utilisateurs,0,users,0,utilisateurs.size());
-            }
 
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-        });
         return users;
     }
 

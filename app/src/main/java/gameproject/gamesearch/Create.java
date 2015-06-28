@@ -10,9 +10,6 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.Date;
-
-import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
@@ -22,7 +19,7 @@ import retrofit.converter.GsonConverter;
  */
 public class Create {
     private static final String BASE_URL = "http://localhost:3229";
-    private ApiService apiService;
+    private CRUD CRUD;
     private ApiSend apiSend;
 
     public Create()
@@ -40,11 +37,11 @@ public class Create {
                         Log.i("MESSAAGE", msg);
                     }
                 }).build();
-        apiService = restAdapter.create(ApiService.class);
+        CRUD = restAdapter.create(CRUD.class);
     }
-    public ApiService getApiService()
+    public CRUD getApiService()
     {
-        return apiService;
+        return CRUD;
     }
     public ApiSend getApiSend()
     {

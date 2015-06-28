@@ -4,19 +4,13 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -30,19 +24,19 @@ public class StartScreen extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
         Create request = new Create();
-        final ApiService api=   request.getApiService();
+        final CRUD api=   request.getApiService();
         Utilisateur unUtilisateur = new Utilisateur(999,"testUpdated","testUpdated");
-        api.getAllGames(new Callback<ArrayList<Jeu>>() {
-            @Override
-            public void success(ArrayList<Jeu> jeus, Response response) {
-                jeus.size();
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-        });
+    //    api.getAllGames(new Callback<ArrayList<Jeu>>() {
+    //        @Override
+    //        public void success(ArrayList<Jeu> jeus, Response response) {
+    //            jeus.size();
+    //        }
+//
+    //        @Override
+    //        public void failure(RetrofitError error) {
+//
+    //        }
+    //    });
 
         //GET YOUR USERS HERE !!!!!!
    //  List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();

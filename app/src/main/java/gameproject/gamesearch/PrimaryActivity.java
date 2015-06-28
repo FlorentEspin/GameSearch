@@ -38,23 +38,13 @@ public class PrimaryActivity extends ActionBarActivity {
 
 
         Date d = new Date();
-        Jeu unjeuTest = new Jeu(100,"test", d,"test","test", testEditeur,testGenre, testNorme);
+       // Jeu unjeuTest = new Jeu(100,"test", d,"test","test", testEditeur,testGenre, testNorme);
         Utilisateur unUtilisateur = new Utilisateur(999,"test","test");
         Gson gson = new Gson();
 
         String json=  gson.toJson(unUtilisateur);
        // ApiService client = (ApiService) ServiceGenerator.createService(Utilisateur.class,"http://localhost:3229");
-        api.createUtilisateur(unUtilisateur, new Callback<String>() {
-            @Override
-            public void success(String s, Response response) {
 
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-        });
 
 
 //Create request = new Create();

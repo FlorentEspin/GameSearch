@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
@@ -10,26 +11,34 @@ import java.util.List;
 
 public class Jeu {
     @SerializedName("ID_JEU")
+    @Expose
     private int idJeu=0;
     @SerializedName("NOM_JEU")
+    @Expose
     private String nomJeu="";
     @SerializedName("DATE_DE_SORTIE")
-    private Date dateDeSortieJeu= new Date();
+    @Expose
+    private String dateDeSortieJeu= "";
     @SerializedName("DESCRIPTIF")
+    @Expose
     private String descriptifJeu="";
     @SerializedName("IMAGE")
+    @Expose
     private String imageJeu ="";
     @SerializedName("EDITEURs")
+    @Expose
     public List<Editeur> Editeur = new ArrayList<Editeur>();
-
+    @SerializedName("GENREs")
+    @Expose
     public List<Genre> Genre= new ArrayList<Genre>();
     @SerializedName("ID_NORME")
-    private Norme normeJeu = new Norme();
+    @Expose
+    private int normeJeu = 0;
 
     public Jeu() {
     }
 
-    public Jeu(int idJeu, String nomJeu, Date dateDeSortieJeu, String descriptifJeu, String imageJeu, List<Editeur> Editeur, List<Genre> Genre, Norme normeJeu) {
+    public Jeu(int idJeu, String nomJeu, String dateDeSortieJeu, String descriptifJeu, String imageJeu, List<Editeur> Editeur, List<Genre> Genre, int normeJeu) {
         this.idJeu = idJeu;
         this.nomJeu = nomJeu;
         this.dateDeSortieJeu = dateDeSortieJeu;
@@ -48,7 +57,7 @@ public class Jeu {
         return nomJeu;
     }
 
-    public Date getDateDeSortieJeu() {
+    public String getDateDeSortieJeu() {
         return dateDeSortieJeu;
     }
 
@@ -68,7 +77,7 @@ public class Jeu {
         return Genre;
     }
 
-    public Norme getNormeJeu() {
+    public int getNormeJeu() {
         return normeJeu;
     }
 
@@ -80,7 +89,7 @@ public class Jeu {
         this.nomJeu = nomJeu;
     }
 
-    public void setDateDeSortieJeu(Date dateDeSortieJeu) {
+    public void setDateDeSortieJeu(String dateDeSortieJeu) {
         this.dateDeSortieJeu = dateDeSortieJeu;
     }
 
@@ -100,7 +109,7 @@ public class Jeu {
         this.Genre = Genre;
     }
 
-    public void setNormeJeu(Norme normeJeu) {
+    public void setNormeJeu(int normeJeu) {
         this.normeJeu = normeJeu;
     }   
 }

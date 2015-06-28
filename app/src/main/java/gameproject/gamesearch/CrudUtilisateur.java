@@ -25,11 +25,11 @@ public class CrudUtilisateur {
 //
     public static List<Utilisateur> getAllUser()
     {
-       final List<Utilisateur> users = new ArrayList<Utilisateur>();
-        api.getAllUser(new Callback<List<Utilisateur>>() {
+      final   ArrayList<Utilisateur> users = new ArrayList<Utilisateur>();
+        api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
             @Override
-            public void success(List<Utilisateur> utilisateurs, Response response) {
-                users.addAll(utilisateurs);
+            public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
+               System.arraycopy(utilisateurs,0,users,0,utilisateurs.size());
             }
 
             @Override
@@ -40,25 +40,9 @@ public class CrudUtilisateur {
         return users;
     }
 
-    public void createUser(final Utilisateur aUser)
-    {
-        try
-        {
-            api.createUtilisateur(aUser, new Callback<String>() {
-                @Override
-                public void success(String s, Response response) {
-                    Log.i("SUCESS, ADDING USER : ",aUser.getLOGIN());
-                }
 
-                @Override
-                public void failure(RetrofitError error) {
-                    Log.i("ERROR",error.getMessage());
-                }
-            });
-        }
-        catch(Exception e)
+        public void updateUser(Utilisateur aUser)
         {
-            Log.i("ERROR"," ENCOUNTER IN CREATEUSER, BEFORE CONNECTING TO THE WEB SERVICE "+e.getMessage());
+
         }
-    }
 }

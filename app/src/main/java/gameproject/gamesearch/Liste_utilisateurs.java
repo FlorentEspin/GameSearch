@@ -3,8 +3,6 @@ package gameproject.gamesearch;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -26,15 +24,6 @@ public class Liste_utilisateurs extends Activity {
 
         TextView listeUtilisateurs = (TextView) findViewById(R.id.listeUtilisateurs);
         listeUtilisateurs.setText(lesUtilisateurs.toString());
-
-
-        /* Partie RECYCLERVIEW */
-        RecyclerView recList = (RecyclerView) findViewById(R.id.listeUtilisateurs);
-        recList.setHasFixedSize(true);
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recList.setLayoutManager(llm);
-
     }
 
     @Override

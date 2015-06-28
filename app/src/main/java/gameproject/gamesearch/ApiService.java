@@ -13,8 +13,10 @@ import java.util.Objects;
 
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit.http.Field;
 import retrofit.http.GET;
 import retrofit.http.POST;
+import retrofit.http.PUT;
 import retrofit.http.Path;
 
 /**
@@ -22,21 +24,22 @@ import retrofit.http.Path;
  */
 public interface ApiService {
 
-    @GET("/api/jeux")
-    public void getContent(Callback<List<Utilisateur>> callback);
+    @GET("/api/Jeux")
+    public void getAllGames(Callback<ArrayList<Jeu>> cb);
 
     @POST("/api/jeux")
     public void createTask(@Body Jeu unJeu, Callback<Jeu> cb);
 
+    @GET("/api/Utilisateurs")
+    public List<Utilisateur> getAllUser(Callback<ArrayList<Utilisateur>> cb);
+
+    @GET("/api/Utilisateurs")
+    public void getUserById(@Body int userID, Callback<String> cb);
+
     @POST("/api/Utilisateurs")
-    public void createUtilisateur(@Body Utilisateur unUtilisateur, Callback<String> cb);
-
-    @GET("/api/Utilisateurs")
-    void getAllUser(Callback<List<Utilisateur>> cb);
-
-    @GET("/api/Utilisateurs")
-    public void     getUserById(@Body int userID, Callback<String> cb);
-
+    public void createUtilisateur(@Body Utilisateur unUtilisateur, Callback<Utilisateur> cb);
+    @PUT("/api/Utilisateurs")
+    Utilisateur updateUser(Utilisateur aUSer,Callback<String> cb);
 
 
 }

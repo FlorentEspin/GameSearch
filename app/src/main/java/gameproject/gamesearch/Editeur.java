@@ -5,9 +5,15 @@
  */
 package gameproject.gamesearch;
 
-public class Editeur {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+public class Editeur {
+    @SerializedName("ID_EDITEUR")
+    @Expose
     private int id;
+    @SerializedName("NOM_EDITEUR")
+    @Expose
     private String nom;
     public Editeur(){}
     public Editeur (int IdEditeur, String NomEditeur)

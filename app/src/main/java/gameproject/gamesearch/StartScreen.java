@@ -29,8 +29,24 @@ public class StartScreen extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_screen);
+        Create request = new Create();
+        final ApiService api=   request.getApiService();
+        Utilisateur unUtilisateur = new Utilisateur(999,"testUpdated","testUpdated");
+        api.getAllGames(new Callback<ArrayList<Jeu>>() {
+            @Override
+            public void success(ArrayList<Jeu> jeus, Response response) {
+                jeus.size();
+            }
 
+            @Override
+            public void failure(RetrofitError error) {
 
+            }
+        });
+
+        //GET YOUR USERS HERE !!!!!!
+   //  List<Utilisateur> lesUtilisateurs =  CrudUtilisateur.getAllUser();
+        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         String T="";
 

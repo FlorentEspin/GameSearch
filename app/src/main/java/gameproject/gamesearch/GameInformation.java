@@ -55,18 +55,31 @@ public class GameInformation extends ActionBarActivity {
 
             }
         }
+        final String userID = getIntent().getStringExtra("ID");
         final Button btnModify = (Button) findViewById(R.id.btnModifier);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Utilisateur modifiedUser = new Utilisateur(Integer.parseInt(userID),((EditText) findViewById(R.id.tbLogin)).getText().toString(),((EditText) findViewById(R.id.tbPassword)).getText().toString());
+                api.updateUser(modifiedUser, new Callback<Utilisateur>() {
+                    @Override
+                    public void success(Utilisateur utilisateur, Response response) {
+
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                    }
+                });
 
             }
         });
-        final Button btnDelete = (Button) findViewById(R.id.btnModifier);
+        final Button btnDelete = (Button) findViewById(R.id.btnDelete);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userID = getIntent().getStringExtra("ID");
+
                 api.deleteUser(Integer.parseInt(userID), new Callback<String>() {
                     @Override
                     public void success(String s, Response response) {

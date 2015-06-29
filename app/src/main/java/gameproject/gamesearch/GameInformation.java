@@ -1,6 +1,5 @@
 package gameproject.gamesearch;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -56,7 +55,7 @@ public class GameInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnModifier);
+        final Button btnModify = (Button) findViewById(R.id.btnModifierEditor);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

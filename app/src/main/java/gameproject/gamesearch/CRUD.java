@@ -61,9 +61,11 @@ public interface CRUD {
     @GET("/api/Editeurs")
     public void getEditorByName(@Query("name")String editorName, Callback<Editeur> cb);
     @POST("/api/Editeurs")
-    public void createEditor(@Body Utilisateur aEditor, Callback<Editeur> cb);
+    public void createEditor(@Body Editeur aEditor, Callback<Editeur> cb);
     @POST("/api/Editeurs")
-    public void updateEditor(@Body Utilisateur aEditor, Callback<Editeur> cb);
+    public void updateEditor(@Body Editeur aEditor, Callback<Editeur> cb);
+    @DELETE("/api/Editeurs")
+    public void deleteEditor(@Query("ID")int editorID, Callback<String> cb);
     //endregion
 
 //region CRUD FOR KINDS

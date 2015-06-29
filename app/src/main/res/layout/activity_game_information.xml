@@ -30,7 +30,7 @@
         android:text=""
         android:id="@+id/tbLogin"
         android:layout_marginTop="24dp"
-        android:layout_below="@+id/UserID"
+        android:layout_below="@+id/lblEditorName"
         android:layout_alignLeft="@+id/tbPassword"
         android:layout_alignStart="@+id/tbPassword" />
 
@@ -50,7 +50,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/UserID"
+        android:id="@+id/lblEditorName"
         android:text="@string/UserID"
         android:layout_marginTop="43dp" />
 
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/tbUserID"
-        android:layout_alignTop="@+id/UserID"
+        android:layout_alignTop="@+id/lblEditorName"
         android:layout_alignLeft="@+id/tbLogin"
         android:layout_alignStart="@+id/tbLogin" />
 
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnModifier"
+        android:id="@+id/btnModifierEditor"
         android:layout_below="@+id/tbPassword"
         android:layout_toRightOf="@+id/lblPassword"
         android:layout_toEndOf="@+id/lblPassword"
@@ -79,8 +79,8 @@
         android:layout_height="wrap_content"
         android:text="Supprimer"
         android:id="@+id/btnDelete"
-        android:layout_alignBottom="@+id/btnModifier"
-        android:layout_toRightOf="@+id/btnModifier"
-        android:layout_toEndOf="@+id/btnModifier" />
+        android:layout_alignBottom="@+id/btnModifierEditor"
+        android:layout_toRightOf="@+id/btnModifierEditor"
+        android:layout_toEndOf="@+id/btnModifierEditor" />
 
 </RelativeLayout>

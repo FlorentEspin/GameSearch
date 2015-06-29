@@ -12,4 +12,8 @@
     <string name="password">password</string>
     <string name="UserID">UserID</string>
     <string name="title_activity_create_game">CreateGame</string>
+    <string name="title_activity_liste__editor">Liste_Editor</string>
+    <string name="title_activity_editor_information">EditorInformation</string>
+    <string name="EditorName">EditorName</string>
+    <string name="EditorID">password</string>
 </resources>

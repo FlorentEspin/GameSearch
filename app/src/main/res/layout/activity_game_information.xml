@@ -9,41 +9,78 @@
     <TextView android:text="@string/Login" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblLogin"
-        android:layout_alignParentTop="true"
+        android:layout_above="@+id/tbPassword"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="80dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:text="@string/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblPassword"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/lblLogin"
+        android:layout_alignBaseline="@+id/tbPassword"
+        android:layout_alignBottom="@+id/tbPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
+        android:text=""
         android:id="@+id/tbLogin"
-        android:layout_alignTop="@+id/lblLogin"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/UserID"
         android:layout_alignLeft="@+id/tbPassword"
         android:layout_alignStart="@+id/tbPassword" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text=""
+        android:id="@+id/tbPassword"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/tbLogin"
+        android:layout_toRightOf="@+id/lblPassword"
+        android:layout_toEndOf="@+id/lblPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UserID"
+        android:text="@string/UserID"
+        android:layout_marginTop="43dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/tbPassword"
-        android:layout_alignTop="@+id/lblPassword"
+        android:id="@+id/tbUserID"
+        android:layout_alignTop="@+id/UserID"
+        android:layout_alignLeft="@+id/tbLogin"
+        android:layout_alignStart="@+id/tbLogin" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modifier"
+        android:id="@+id/btnModifier"
+        android:layout_below="@+id/tbPassword"
         android:layout_toRightOf="@+id/lblPassword"
         android:layout_toEndOf="@+id/lblPassword"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp" />
+        android:layout_marginTop="84dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer"
+        android:id="@+id/btnDelete"
+        android:layout_alignBottom="@+id/btnModifier"
+        android:layout_toRightOf="@+id/btnModifier"
+        android:layout_toEndOf="@+id/btnModifier" />
 
 </RelativeLayout>

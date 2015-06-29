@@ -13,6 +13,7 @@ import java.util.Objects;
 
 import retrofit.Callback;
 import retrofit.http.Body;
+import retrofit.http.DELETE;
 import retrofit.http.Field;
 import retrofit.http.GET;
 import retrofit.http.POST;
@@ -48,6 +49,8 @@ public interface CRUD {
     public void createUtilisateur(@Body Utilisateur aUser, Callback<Utilisateur> cb);
     @POST("/api/Utilisateurs")
     public void updateUser(@Body Utilisateur aUser, Callback<Utilisateur> cb);
+    @DELETE("/api/Utilisateurs")
+    public void deleteUser(@Query("ID")int userID, Callback<String> cb);
     //endregion
 //region CRUD FOR EDITORS
 

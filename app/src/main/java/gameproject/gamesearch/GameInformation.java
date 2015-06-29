@@ -1,9 +1,18 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class GameInformation extends ActionBarActivity {
@@ -12,11 +21,68 @@ public class GameInformation extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_information);
-        String value = getIntent().getStringExtra("ID");
+        Create request = new Create();
+        final CRUD api=   request.getApiService();
+
+        String ID ="";
         Bundle extras = getIntent().getExtras();
+
         if (extras != null) {
-       //     String value = getIntent().getStringExtra("ID");
+            ID = getIntent().getStringExtra("ID");
+            try {
+                api.getUserById(Integer.parseInt(ID), new Callback<Utilisateur>() {
+                    @Override
+                    public void success(Utilisateur utilisateur, Response response) {
+                        //ADD ID
+                        TextView tbID = (TextView) findViewById(R.id.tbUserID);
+                        tbID.setText(String.valueOf(utilisateur.getID_UTILISATEUR()));
+                        //ADD LOGIN
+                        EditText tbLogin = (EditText) findViewById(R.id.tbLogin);
+                        tbLogin.setText(utilisateur.getLOGIN());
+                        //ADD PASSWORD
+                        EditText  tbPassword = (EditText) findViewById(R.id.tbPassword);
+                        tbLogin.setText(utilisateur.getPASSWORD());
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                    }
+                });
+            }
+            catch(Exception e)
+            {
+
+            }
         }
+        final Button btnModify = (Button) findViewById(R.id.btnModifier);
+        btnModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        final Button btnDelete = (Button) findViewById(R.id.btnModifier);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String userID = getIntent().getStringExtra("ID");
+                api.deleteUser(Integer.parseInt(userID), new Callback<String>() {
+                    @Override
+                    public void success(String s, Response response) {
+
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                    }
+                });
+
+            }
+        });
+
+
     }
 
     @Override

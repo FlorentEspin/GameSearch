@@ -1,24 +1,17 @@
 package gameproject.gamesearch;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
-
-import com.squareup.okhttp.internal.Util;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import gameproject.gamesearch.recyclerview.ItemData;
-import gameproject.gamesearch.recyclerview.MyAdapter;
+
+import gameproject.gamesearch.recyclerview.ListUserAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -40,7 +33,7 @@ public class Liste_utilisateurs extends Activity {
            api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
                @Override
                public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
-                   MyAdapter mAdapter = new MyAdapter(utilisateurs);
+                   ListUserAdaptator mAdapter = new ListUserAdaptator(utilisateurs);
                    recyclerView.setAdapter(mAdapter);
                    recyclerView.setItemAnimator(new DefaultItemAnimator());
                }

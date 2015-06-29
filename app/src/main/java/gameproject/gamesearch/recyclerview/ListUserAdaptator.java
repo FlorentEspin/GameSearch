@@ -14,14 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gameproject.gamesearch.GameInformation;
-import gameproject.gamesearch.Liste_jeux;
 import gameproject.gamesearch.R;
 import gameproject.gamesearch.Utilisateur;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.ViewHolder> {
     private List<Utilisateur> listUser = new ArrayList<Utilisateur>();
 
-    public MyAdapter(List<Utilisateur> users) {
+    public ListUserAdaptator(List<Utilisateur> users) {
       this.listUser = users;
     }
     

@@ -2,20 +2,11 @@ package gameproject.gamesearch;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import gameproject.gamesearch.recyclerview.ItemData;
-import gameproject.gamesearch.recyclerview.MyAdapter;
 
 
 public class PrimaryActivity extends ActionBarActivity {
@@ -27,12 +18,6 @@ public class PrimaryActivity extends ActionBarActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
 
-        ItemData itemsData[] = { new ItemData("Help",R.drawable.help),
-                new ItemData("Delete",R.drawable.content_discard),
-                new ItemData("Cloud",R.drawable.collections_cloud),
-                new ItemData("Favorite",R.drawable.rating_favorite),
-                new ItemData("Like",R.drawable.rating_good),
-                new ItemData("Rating",R.drawable.rating_important)};
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

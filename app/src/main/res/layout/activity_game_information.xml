@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text=""
+        android:text="blabla"
         android:id="@+id/tbPassword"
         android:layout_marginLeft="33dp"
         android:layout_marginStart="33dp"

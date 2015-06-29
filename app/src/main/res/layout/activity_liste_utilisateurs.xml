@@ -28,5 +28,24 @@
         android:layout_height="wrap_content"
         android:text="Rechercher"
         android:id="@+id/btnRechercher"
-        android:layout_alignBottom="@+id/tbGameName" />
+        android:layout_below="@+id/tbGameName"
+        android:layout_toLeftOf="@+id/btnReinitialiser"
+        android:layout_toStartOf="@+id/btnReinitialiser" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réinitialiser"
+        android:id="@+id/btnReinitialiser"
+        android:layout_alignBottom="@+id/btnRechercher"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer un utilisateur"
+        android:id="@+id/btnCreateUser"
+        android:layout_alignTop="@+id/btnReinitialiser"
+        android:layout_toRightOf="@+id/btnReinitialiser"
+        android:layout_toEndOf="@+id/btnReinitialiser" />
 </RelativeLayout>

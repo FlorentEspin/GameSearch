@@ -41,7 +41,7 @@ public class GameInformation extends ActionBarActivity {
                         tbLogin.setText(utilisateur.getLOGIN());
                         //ADD PASSWORD
                         EditText  tbPassword = (EditText) findViewById(R.id.tbPassword);
-                        tbLogin.setText(utilisateur.getPASSWORD());
+                        tbPassword.setText(utilisateur.getPASSWORD());
                     }
 
                     @Override

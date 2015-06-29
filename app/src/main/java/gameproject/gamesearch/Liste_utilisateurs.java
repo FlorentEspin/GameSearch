@@ -1,14 +1,21 @@
 package gameproject.gamesearch;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 import gameproject.gamesearch.recyclerview.ListUserAdaptator;
@@ -26,7 +33,6 @@ public class Liste_utilisateurs extends Activity {
         Create request = new Create();
         final CRUD api=   request.getApiService();
 
-
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         try {
@@ -43,6 +49,58 @@ public class Liste_utilisateurs extends Activity {
 
                }
            });
+
+
+            //Add event on buttons
+            final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiser);
+            btnReinitialiser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
+                        @Override
+                        public void success(ArrayList<Utilisateur> utilisateurs, Response response) {
+                            ListUserAdaptator mAdapter = new ListUserAdaptator(utilisateurs);
+                            recyclerView.setAdapter(mAdapter);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+
+                        }
+                    });
+                }
+            });
+
+
+            final Button btnFindUser = (Button) findViewById(R.id.btnRechercher);
+            btnFindUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    final List<Utilisateur> users = new ArrayList<Utilisateur>();
+                    if(((EditText) findViewById(R.id.tbGameName)).getText().toString()!= "" && ((EditText) findViewById(R.id.tbGameName)).getText().toString()!= null)
+                    api.getUserByName(((EditText) findViewById(R.id.tbGameName)).getText().toString(), new Callback<Utilisateur>() {
+                        @Override
+                        public void success(Utilisateur utilisateur, Response response) {
+
+                            users.add(utilisateur);
+                            ListUserAdaptator mAdapter = new ListUserAdaptator(users);
+                            recyclerView.setAdapter(mAdapter);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+                            //create a toast to notify that the user has not found
+                            Context context = v.getContext();
+                            CharSequence text = (CharSequence) "Utilsateur non trouvé";
+                            int duration = Toast.LENGTH_SHORT;
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
+                    });
+                }
+            });
 
         }
         catch (Exception e)

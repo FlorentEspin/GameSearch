@@ -36,6 +36,10 @@
             android:name=".Liste_utilisateurs"
             android:label="@string/title_activity_liste_utilisateurs" >
         </activity>
+        <activity
+            android:name=".GameInformation"
+            android:label="@string/title_activity_game_information" >
+        </activity>
     </application>
 
 </manifest>

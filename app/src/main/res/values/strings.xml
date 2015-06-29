@@ -7,4 +7,7 @@
     <string name="title_activity_start_screen">StartScreen</string>
     <string name="title_activity_liste_jeux">Liste_jeux</string>
     <string name="title_activity_liste_utilisateurs">Liste_utilisateurs</string>
+    <string name="title_activity_game_information">GameInformation</string>
+    <string name="Login">Login</string>
+    <string name="password">password</string>
 </resources>

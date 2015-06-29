@@ -102,6 +102,22 @@ public class Liste_utilisateurs extends Activity {
                 }
             });
 
+            final Button btnCreateUser = (Button) findViewById(R.id.btnCreateUser);
+            btnCreateUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Context context = v.getContext();
+                        Intent intentUtilisateurs = new Intent(context, CreateGame.class);
+                        context.startActivity(intentUtilisateurs);
+                    }
+                    catch (Exception e)
+                    {
+                    e.toString();
+                    }
+                }
+            });
+
         }
         catch (Exception e)
         {

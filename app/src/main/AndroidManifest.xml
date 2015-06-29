@@ -40,6 +40,10 @@
             android:name=".GameInformation"
             android:label="@string/title_activity_game_information" >
         </activity>
+        <activity
+            android:name=".CreateGame"
+            android:label="@string/title_activity_create_game" >
+        </activity>
     </application>
 
 </manifest>

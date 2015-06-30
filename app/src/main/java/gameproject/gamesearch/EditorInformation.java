@@ -19,7 +19,7 @@ public class EditorInformation extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editor_information);
+        setContentView(R.layout.activity_editor_information); 
         Create request = new Create();
         final CRUD api=   request.getApiService();
 

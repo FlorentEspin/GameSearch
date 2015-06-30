@@ -81,6 +81,8 @@ public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.Vi
 
                 imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.item_icon);
                 ID = (TextView) itemLayoutView.findViewById(R.id.idBDD);
+                ID.setTypeface(custom_font);
+
                 // Handle item click and set the selection
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

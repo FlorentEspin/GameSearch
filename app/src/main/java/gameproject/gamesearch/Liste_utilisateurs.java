@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -31,9 +32,13 @@ public class Liste_utilisateurs extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_utilisateurs);
+
+        TextView titre = (TextView)findViewById(R.id.titre);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+        titre.setTypeface(custom_font);
+
         Create request = new Create();
         final CRUD api=   request.getApiService();
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewUser);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

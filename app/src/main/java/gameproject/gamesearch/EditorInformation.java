@@ -19,7 +19,7 @@ public class EditorInformation extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_editor_information); 
+        setContentView(R.layout.activity_editor_information);
         Create request = new Create();
         final CRUD api=   request.getApiService();
 
@@ -36,7 +36,7 @@ public class EditorInformation extends ActionBarActivity {
                     public void success(Editeur editeur, Response response) {
 
                         //ADD ID
-                        TextView tbID = (TextView) findViewById(R.id.tbEditorID);
+                        TextView tbID = (TextView) findViewById(R.id.tbKindID);
                         tbID.setText(String.valueOf(editeur.getId()));
                         //ADD NAME
                         EditText tbLogin = (EditText) findViewById(R.id.tbEditorName);
@@ -55,7 +55,7 @@ public class EditorInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnModifierJeu);
+        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,8 +78,7 @@ public class EditorInformation extends ActionBarActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userID != "" && userID != null)
-                {
+                if (userID != "" && userID != null) {
                     api.deleteEditor(Integer.parseInt(userID), new Callback<String>() {
                         @Override
                         public void success(String s, Response response) {

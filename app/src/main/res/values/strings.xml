@@ -15,6 +15,15 @@
     <string name="title_activity_liste__editor">Liste_Editor</string>
     <string name="title_activity_editor_information">EditorInformation</string>
     <string name="EditorName">EditorName</string>
-    <string name="EditorID">password</string>
-    <string name="nom_du_jeu">Nom du jeu</string>
+    <string name="EditorID">ID de léditeur</string>
+    <string name="NomJeu">Nom du jeu</string>
+    <string name="IDJeu">ID du jeu</string>
+    <string name="DescriptifJeu">Descriptif du jeu</string>
+    <string name="EditeurJeu">Editeur du jeu</string>
+    <string name="GenreJeu">Genre du jeu</string>
+    <string name="DateSortieJeu">Date de sortie du jeu</string>
+    <string name="title_activity_list__genre">List_Genre</string>
+    <string name="title_activity_kind_information">KindInformation</string>
+    <string name="KindName">Nom du genre</string>
+    <string name="KindID">ID du genre</string>
 </resources>

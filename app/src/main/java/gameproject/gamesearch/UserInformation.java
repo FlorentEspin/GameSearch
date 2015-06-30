@@ -55,7 +55,7 @@ public class UserInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnModifierJeu);
+        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

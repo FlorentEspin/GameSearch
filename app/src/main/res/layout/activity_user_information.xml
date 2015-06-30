@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnModifierJeu"
+        android:id="@+id/btnKindModify"
         android:layout_below="@+id/tbPassword"
         android:layout_toRightOf="@+id/lblPassword"
         android:layout_toEndOf="@+id/lblPassword"
@@ -79,8 +79,8 @@
         android:layout_height="wrap_content"
         android:text="Supprimer"
         android:id="@+id/btnDeleteJeu"
-        android:layout_alignBottom="@+id/btnModifierJeu"
-        android:layout_toRightOf="@+id/btnModifierJeu"
-        android:layout_toEndOf="@+id/btnModifierJeu" />
+        android:layout_alignBottom="@+id/btnKindModify"
+        android:layout_toRightOf="@+id/btnKindModify"
+        android:layout_toEndOf="@+id/btnKindModify" />
 
 </RelativeLayout>

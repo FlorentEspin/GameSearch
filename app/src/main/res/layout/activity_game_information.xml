@@ -1,99 +1,82 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="gameproject.gamesearch.UserInformation">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="gameproject.gamesearch.GameInformation">
 
-    <TextView android:text="@string/nom_du_jeu" android:layout_width="wrap_content"
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lblNomJeu"
-        android:layout_below="@+id/lblIdJeu"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="52dp" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/IDJeu"
+        android:id="@+id/lblIDJeu" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbIDJeu"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/NomJeu"
+        android:id="@+id/lblNomJeu" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbNomJeu"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/EditeurJeu"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbEditeurJeu"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/DateSortieJeu"
+        android:id="@+id/textView4" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DateSortieJeu" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/GenreJeu"
+        android:id="@+id/textView" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbGenreJeu" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnModifierJeu"
-        android:layout_alignTop="@+id/btnDeleteJeu"
-        android:layout_toRightOf="@+id/lblGenreJeu"
-        android:layout_toEndOf="@+id/lblGenreJeu" />
+        android:id="@+id/btnKindModify" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Supprimer"
-        android:id="@+id/btnDeleteJeu"
-        android:layout_below="@+id/tbGenreJeu"
-        android:layout_toRightOf="@+id/btnModifierJeu"
-        android:layout_toEndOf="@+id/btnModifierJeu"
-        android:layout_marginTop="163dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tbNomJeu"
-        android:text="New Text"
-        android:layout_alignTop="@+id/lblNomJeu"
-        android:layout_alignRight="@+id/tbGenreJeu"
-        android:layout_alignEnd="@+id/tbGenreJeu" />
-
-    <TextView
-        android:text="Genre du jeu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblGenreJeu"
-        android:layout_below="@+id/lblNomJeu"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="58dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tbGenreJeu"
-        android:layout_alignBottom="@+id/lblGenreJeu"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Id Jeu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblIdJeu"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tbIdJeu"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:text="Editeur du jeu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblEditeurJeu"
-        android:layout_marginTop="61dp"
-        android:layout_below="@+id/lblGenreJeu"
-        android:layout_alignRight="@+id/lblGenreJeu"
-        android:layout_alignEnd="@+id/lblGenreJeu" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/tbEditeurJeu"
-        android:layout_alignTop="@+id/lblEditeurJeu"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+        android:id="@+id/btnSupprimerJeu" />
+</LinearLayout>

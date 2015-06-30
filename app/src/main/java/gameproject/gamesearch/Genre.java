@@ -11,10 +11,10 @@ public class Genre {
     @Expose
     private String nomGenre;
     
-    public Genre(){}
-    public Genre(int idGenre, String nomGenre) {
-        this.idGenre = idGenre;
-        this.nomGenre = nomGenre;
+   public Genre(){}
+   public Genre(int idGenre, String nomGenre) {
+       this.idGenre = idGenre;
+       this.nomGenre = nomGenre;
     }
 
     public int getIdGenre() {

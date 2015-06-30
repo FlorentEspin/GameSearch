@@ -52,6 +52,18 @@
             android:name=".EditorInformation"
             android:label="@string/title_activity_editor_information" >
         </activity>
+        <activity
+            android:name=".GameInformation"
+            android:label="@string/title_activity_game_information" >
+        </activity>
+        <activity
+            android:name=".List_Genre"
+            android:label="@string/title_activity_list__genre" >
+        </activity>
+        <activity
+            android:name=".KindInformation"
+            android:label="@string/title_activity_kind_information" >
+        </activity>
     </application>
 
 </manifest>

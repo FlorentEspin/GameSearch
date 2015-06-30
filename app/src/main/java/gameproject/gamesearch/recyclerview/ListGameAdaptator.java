@@ -1,7 +1,6 @@
 package gameproject.gamesearch.recyclerview;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +12,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gameproject.gamesearch.GameInformation;
 import gameproject.gamesearch.Jeu;
 import gameproject.gamesearch.R;
-import gameproject.gamesearch.Utilisateur;
 
 public class ListGameAdaptator extends RecyclerView.Adapter<ListGameAdaptator.ViewHolder> {
     private List<Jeu> listJeu = new ArrayList<Jeu>();

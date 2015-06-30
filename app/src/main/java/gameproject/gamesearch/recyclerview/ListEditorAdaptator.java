@@ -15,9 +15,7 @@ import java.util.List;
 
 import gameproject.gamesearch.Editeur;
 import gameproject.gamesearch.EditorInformation;
-import gameproject.gamesearch.GameInformation;
 import gameproject.gamesearch.R;
-import gameproject.gamesearch.Utilisateur;
 
 public class ListEditorAdaptator extends RecyclerView.Adapter<ListEditorAdaptator.ViewHolder> {
     private List<Editeur> listEditor = new ArrayList<Editeur>();

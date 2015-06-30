@@ -14,7 +14,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class GameInformation extends ActionBarActivity {
+public class UserInformation extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

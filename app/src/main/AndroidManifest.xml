@@ -37,7 +37,7 @@
             android:label="@string/title_activity_liste_utilisateurs" >
         </activity>
         <activity
-            android:name=".GameInformation"
+            android:name=".UserInformation"
             android:label="@string/title_activity_game_information" >
         </activity>
         <activity

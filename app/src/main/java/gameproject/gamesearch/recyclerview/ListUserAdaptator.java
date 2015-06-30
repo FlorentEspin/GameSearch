@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gameproject.gamesearch.GameInformation;
+import gameproject.gamesearch.UserInformation;
 import gameproject.gamesearch.R;
 import gameproject.gamesearch.Utilisateur;
 
@@ -79,7 +79,7 @@ public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.Vi
                         CharSequence text = (CharSequence) txtViewTitle.getText();
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
-                        Intent intentJeux = new Intent(context,GameInformation.class);
+                        Intent intentJeux = new Intent(context,UserInformation.class);
                         intentJeux.putExtra("ID",ID.getText());
                         context.startActivity(intentJeux);
                         toast.show();

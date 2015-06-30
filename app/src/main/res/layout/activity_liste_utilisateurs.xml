@@ -14,38 +14,48 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnCreateUser" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tbGameName"
-        android:layout_marginTop="49dp" />
+        android:background="@color/White"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rechercher"
+        android:textSize="14.1sp"
         android:id="@+id/btnRechercher"
         android:layout_below="@+id/tbGameName"
-        android:layout_toLeftOf="@+id/btnReinitialiser"
-        android:layout_toStartOf="@+id/btnReinitialiser" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Réinitialiser"
+        android:text="Reinitialiser"
+        android:textSize="14.1sp"
         android:id="@+id/btnReinitialiser"
-        android:layout_alignBottom="@+id/btnRechercher"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/btnRechercher"
+        android:layout_toRightOf="@+id/btnRechercher"
+        android:layout_toEndOf="@+id/btnRechercher" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer un utilisateur"
+        android:text="Nouveau"
+        android:textSize="14.1sp"
         android:id="@+id/btnCreateUser"
-        android:layout_alignTop="@+id/btnReinitialiser"
+        android:layout_below="@+id/tbGameName"
         android:layout_toRightOf="@+id/btnReinitialiser"
-        android:layout_toEndOf="@+id/btnReinitialiser" />
+        android:layout_alignRight="@+id/recyclerView"
+        android:layout_alignEnd="@+id/recyclerView" />
 </RelativeLayout>

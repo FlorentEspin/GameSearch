@@ -3,6 +3,7 @@ package gameproject.gamesearch;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,6 +33,7 @@ public class Liste_utilisateurs extends Activity {
         setContentView(R.layout.activity_liste_utilisateurs);
         Create request = new Create();
         final CRUD api=   request.getApiService();
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -53,6 +55,7 @@ public class Liste_utilisateurs extends Activity {
 
             //Add event on buttons
             final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiser);
+            btnReinitialiser.setTypeface(custom_font);
             btnReinitialiser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -74,6 +77,7 @@ public class Liste_utilisateurs extends Activity {
 
 
             final Button btnFindUser = (Button) findViewById(R.id.btnRechercher);
+            btnFindUser.setTypeface(custom_font);
             btnFindUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
@@ -103,6 +107,7 @@ public class Liste_utilisateurs extends Activity {
             });
 
             final Button btnCreateUser = (Button) findViewById(R.id.btnCreateUser);
+            btnCreateUser.setTypeface(custom_font);
             btnCreateUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

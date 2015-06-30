@@ -2,6 +2,9 @@ package gameproject.gamesearch.recyclerview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +19,8 @@ import java.util.List;
 import gameproject.gamesearch.UserInformation;
 import gameproject.gamesearch.R;
 import gameproject.gamesearch.Utilisateur;
+
+
 
 public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.ViewHolder> {
     private List<Utilisateur> listUser = new ArrayList<Utilisateur>();
@@ -57,7 +62,6 @@ public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.Vi
 
     }
 
-    
     // inner class to hold a reference to each item of RecyclerView 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -65,10 +69,16 @@ public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.Vi
         public ImageView imgViewIcon;
         public TextView ID;
 
+
         public ViewHolder(final View itemLayoutView) {
             super(itemLayoutView);
             try {
                 txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.item_title);
+
+                // Ajout police
+                Typeface custom_font = Typeface.createFromAsset(itemLayoutView.getContext().getAssets(), "fonts/arcade.ttf");
+                txtViewTitle.setTypeface(custom_font);
+
                 imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.item_icon);
                 ID = (TextView) itemLayoutView.findViewById(R.id.idBDD);
                 // Handle item click and set the selection
@@ -91,7 +101,7 @@ public class ListUserAdaptator extends RecyclerView.Adapter<ListUserAdaptator.Vi
                 e.toString();
             }
         }
-        }
+    }
 
     // Return the size of your itemsData (invoked by the layout manager)
     @Override

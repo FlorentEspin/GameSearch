@@ -60,13 +60,13 @@ public class GameInformation extends ActionBarActivity {
 
             }
         }
-        final String userID = getIntent().getStringExtra("ID");
+        final String gameID = getIntent().getStringExtra("ID");
         final Button btnModify = (Button) findViewById(R.id.btnModifierJeu);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
-                api.updateEditor(modifiedUser, new Callback<Editeur>() {
+                Jeu modifiedGame = new Jeu(Integer.parseInt(gameID), ((EditText) findViewById(R.id.tbNomJeu)).getText().toString());
+                api.updateEditor(modifiedGame, new Callback<Jeu>() {
                     @Override
                     public void success(Editeur utilisateur, Response response) {
 
@@ -84,9 +84,9 @@ public class GameInformation extends ActionBarActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userID != "" && userID != null)
+                if(gameID != "" && gameID != null)
                 {
-                    api.deleteGame(Integer.parseInt(userID), new Callback<String>() {
+                    api.deleteGame(Integer.parseInt(gameID), new Callback<String>() {
                         @Override
                         public void success(String s, Response response) {
 

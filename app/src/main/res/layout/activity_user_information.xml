@@ -7,20 +7,21 @@
     android:background="@drawable/background"
     tools:context="gameproject.gamesearch.UserInformation">
 
-    <TextView android:text="@string/Login" android:layout_width="wrap_content"
+    <TextView android:text="Login :" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblLogin"
-        android:layout_above="@+id/tbPassword"
+        android:textSize="20sp"
+        android:layout_alignTop="@+id/tbLogin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Mot de passe"
+        android:text="Mot de passe :"
+        android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblPassword"
-        android:layout_alignBaseline="@+id/tbPassword"
-        android:layout_alignBottom="@+id/tbPassword"
+        android:layout_alignTop="@+id/tbPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -29,30 +30,31 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="New text"
-        android:background="@color/White"
+        android:textSize="15sp"
         android:id="@+id/tbLogin"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="34dp"
         android:layout_below="@+id/tbUserID"
-        android:layout_alignLeft="@+id/tbPassword"
-        android:layout_alignStart="@+id/tbPassword" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="New text"
-        android:background="@color/White"
         android:id="@+id/tbPassword"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
+        android:textSize="15sp"
         android:layout_below="@+id/tbLogin"
-        android:layout_toLeftOf="@+id/btnDeleteJeu"
-        android:layout_toStartOf="@+id/btnDeleteJeu" />
+        android:layout_alignLeft="@+id/tbLogin"
+        android:layout_alignStart="@+id/tbLogin" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lblUserID"
-        android:text="Numero"
+        android:text="Numero :"
+        android:textSize="20sp"
         android:layout_marginTop="40dp" />
 
     <TextView
@@ -60,19 +62,23 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/tbUserID"
+        android:text="New Text"
+        android:textSize="15sp"
         android:layout_alignTop="@+id/lblUserID"
-        android:layout_alignLeft="@+id/tbLogin"
-        android:layout_alignStart="@+id/tbLogin" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
         android:id="@+id/btnKindModify"
+        android:layout_marginTop="84dp"
         android:layout_below="@+id/tbPassword"
-        android:layout_toRightOf="@+id/lblPassword"
-        android:layout_toEndOf="@+id/lblPassword"
-        android:layout_marginTop="84dp" />
+        android:layout_alignLeft="@+id/btnDeleteJeu"
+        android:layout_alignStart="@+id/btnDeleteJeu"
+        android:layout_alignRight="@+id/btnDeleteJeu"
+        android:layout_alignEnd="@+id/btnDeleteJeu" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -80,8 +86,7 @@
         android:layout_height="wrap_content"
         android:text="Supprimer"
         android:id="@+id/btnDeleteJeu"
-        android:layout_alignBottom="@+id/btnKindModify"
-        android:layout_toRightOf="@+id/btnKindModify"
-        android:layout_toEndOf="@+id/btnKindModify" />
+        android:layout_below="@+id/btnKindModify"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

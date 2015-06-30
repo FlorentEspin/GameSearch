@@ -41,15 +41,17 @@ public class UserInformation extends ActionBarActivity {
                         TextView idUser = (TextView) findViewById(R.id.lblUserID);
                         tbID.setTypeface(custom_font);
                         idUser.setTypeface(custom_font);
-
                         //ADD LOGIN
                         EditText tbLogin = (EditText) findViewById(R.id.tbLogin);
                         tbLogin.setText(utilisateur.getLOGIN());
-
+                        TextView login = (TextView) findViewById(R.id.lblLogin);
+                        login.setTypeface(custom_font);
                         tbLogin.setTypeface(custom_font);
                         //ADD PASSWORD
                         EditText  tbPassword = (EditText) findViewById(R.id.tbPassword);
                         tbPassword.setText(utilisateur.getPASSWORD());
+                        TextView password = (TextView) findViewById(R.id.lblPassword);
+                        password.setTypeface(custom_font);
                         tbPassword.setTypeface(custom_font);
                     }
 

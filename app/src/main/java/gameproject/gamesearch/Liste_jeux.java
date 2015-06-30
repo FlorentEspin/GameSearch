@@ -3,10 +3,19 @@ package gameproject.gamesearch;
 import android.app.Activity;
 import android.os.Bundle;
 
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
+import gameproject.gamesearch.recyclerview.ListGameAdaptator;
+import gameproject.gamesearch.recyclerview.ListUserAdaptator;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class Liste_jeux extends Activity {
@@ -16,17 +25,30 @@ public class Liste_jeux extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_jeux);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        Create request = new Create();
+        final CRUD api=   request.getApiService();
+
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        try {
+            api.getAllGames(new Callback<ArrayList<Jeu>>() {
+                @Override
+                public void success(ArrayList<Jeu> jeus, Response response) {
+                    ListGameAdaptator mAdapter = new ListGameAdaptator(jeus);
+                    recyclerView.setAdapter(mAdapter);
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+
+                }
+            });
 
 
-
-    //   recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-    //   MyAdapter mAdapter = new MyAdapter(itemsData);
-    //   recyclerView.setAdapter(mAdapter);
-    //   recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-
+        }
+        catch (Exception e)
+        {e.toString();}
 
     }
 

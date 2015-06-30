@@ -16,6 +16,7 @@ import java.util.List;
 import gameproject.gamesearch.Editeur;
 import gameproject.gamesearch.EditorInformation;
 import gameproject.gamesearch.Genre;
+import gameproject.gamesearch.KindInformation;
 import gameproject.gamesearch.R;
 
 public class ListKingAdaptator extends RecyclerView.Adapter<ListKingAdaptator.ViewHolder> {
@@ -80,7 +81,7 @@ public class ListKingAdaptator extends RecyclerView.Adapter<ListKingAdaptator.Vi
                         CharSequence text = (CharSequence) txtViewTitle.getText();
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
-                        Intent intentJeux = new Intent(context,EditorInformation.class);
+                        Intent intentJeux = new Intent(context,KindInformation.class);
                         intentJeux.putExtra("ID",ID.getText());
                         context.startActivity(intentJeux);
                         toast.show();

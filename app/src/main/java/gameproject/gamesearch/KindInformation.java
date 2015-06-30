@@ -63,7 +63,7 @@ public class KindInformation extends ActionBarActivity {
                 Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
                 api.updateEditor(modifiedUser, new Callback<Editeur>() {
                     @Override
-                    public void success(Editeur utilisateur, Response response) {
+                    public void success(Editeur Editeur, Response response) {
 
                     }
 

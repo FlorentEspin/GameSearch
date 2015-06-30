@@ -1,6 +1,5 @@
 package gameproject.gamesearch;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,7 +18,7 @@ public class CreateGame extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_game);
+        setContentView(R.layout.activity_create_user);
 
         Create request = new Create();
         final CRUD api=   request.getApiService();

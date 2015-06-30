@@ -118,7 +118,7 @@ public class Liste_utilisateurs extends Activity {
                 public void onClick(View v) {
                     try {
                         Context context = v.getContext();
-                        Intent intentUtilisateurs = new Intent(context, CreateUser.class);
+                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateUser.class);
                         context.startActivity(intentUtilisateurs);
                     }
                     catch (Exception e)

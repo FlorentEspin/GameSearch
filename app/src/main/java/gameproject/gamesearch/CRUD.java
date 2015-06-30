@@ -72,15 +72,15 @@ public interface CRUD {
 
 //region CRUD FOR KINDS
 
-    @GET("/api/Utilisateurs")
+    @GET("/api/Genres")
     public void getAllKind(Callback<ArrayList<Genre>> cb);
-    @GET("/api/Utilisateurs")
+    @GET("/api/Genres")
     public void getKindById(@Query("id")int kindID, Callback<Genre> cb);
-    @GET("/api/Utilisateurs")
+    @GET("/api/Genres")
     public void getKindByName(@Query("name")String kindName, Callback<Genre> cb);
-    @POST("/api/Utilisateurs")
+    @POST("/api/Genres")
     public void createKind(@Body Genre aKind, Callback<Genre> cb);
-    @POST("/api/Utilisateurs")
+    @POST("/api/Genres")
     public void updateKind(@Body Genre aKind, Callback<Genre> cb);
     //endregion
 }

@@ -64,6 +64,10 @@
             android:name=".KindInformation"
             android:label="@string/title_activity_kind_information" >
         </activity>
+        <activity
+            android:name=".CreateUser"
+            android:label="CreateUser" >
+        </activity>
     </application>
 
 </manifest>

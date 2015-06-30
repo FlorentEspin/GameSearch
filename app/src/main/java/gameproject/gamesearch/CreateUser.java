@@ -19,7 +19,7 @@ public class CreateUser extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_game);
+        setContentView(R.layout.activity_create_user);
 
         Create request = new Create();
         final CRUD api=   request.getApiService();

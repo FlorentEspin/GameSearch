@@ -35,7 +35,7 @@ public class Liste_utilisateurs extends Activity {
         final CRUD api=   request.getApiService();
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewUser);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         try {
            api.getAllUser(new Callback<ArrayList<Utilisateur>>() {
@@ -113,7 +113,7 @@ public class Liste_utilisateurs extends Activity {
                 public void onClick(View v) {
                     try {
                         Context context = v.getContext();
-                        Intent intentUtilisateurs = new Intent(context, CreateGame.class);
+                        Intent intentUtilisateurs = new Intent(context, CreateUser.class);
                         context.startActivity(intentUtilisateurs);
                     }
                     catch (Exception e)

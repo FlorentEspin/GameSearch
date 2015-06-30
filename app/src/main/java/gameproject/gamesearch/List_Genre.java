@@ -10,7 +10,6 @@ import android.view.MenuItem;
 
 import java.util.ArrayList;
 
-import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
 import gameproject.gamesearch.recyclerview.ListKingAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -22,7 +21,7 @@ public class List_Genre extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list__genre);
+        setContentView(R.layout.activity_list_genre);
 
 
         Create request = new Create();

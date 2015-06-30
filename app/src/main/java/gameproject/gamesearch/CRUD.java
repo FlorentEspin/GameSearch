@@ -36,6 +36,8 @@ public interface CRUD {
     public void createGame(@Body Jeu unJeu, Callback<Jeu> cb);
     @POST("/api/jeux")
     public void UpdateGame(@Body Jeu unJeu, Callback<Jeu> cb);
+    @POST("/api/jeux")
+    public void deleteGame(@Query("ID")int gameID, Callback<String> cb);
 //endregion
 //region CRUD FOR USERS
 

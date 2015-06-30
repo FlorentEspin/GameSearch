@@ -16,4 +16,5 @@
     <string name="title_activity_editor_information">EditorInformation</string>
     <string name="EditorName">EditorName</string>
     <string name="EditorID">password</string>
+    <string name="nom_du_jeu">Nom du jeu</string>
 </resources>

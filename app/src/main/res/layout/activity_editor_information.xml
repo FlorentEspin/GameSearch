@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnModifierEditor"
+        android:id="@+id/btnModifierJeu"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:text="Supprimer"
         android:id="@+id/btnDeleteEditor"
-        android:layout_alignBottom="@+id/btnModifierEditor"
-        android:layout_toRightOf="@+id/btnModifierEditor"
-        android:layout_toEndOf="@+id/btnModifierEditor" />
+        android:layout_alignBottom="@+id/btnModifierJeu"
+        android:layout_toRightOf="@+id/btnModifierJeu"
+        android:layout_toEndOf="@+id/btnModifierJeu" />
 
     <TextView
         android:layout_width="wrap_content"

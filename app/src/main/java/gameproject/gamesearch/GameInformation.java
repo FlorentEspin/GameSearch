@@ -1,7 +1,7 @@
 package gameproject.gamesearch;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,33 +14,39 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class UserInformation extends ActionBarActivity {
+public class GameInformation extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_information);
+        setContentView(R.layout.activity_game_information);
         Create request = new Create();
         final CRUD api=   request.getApiService();
 
         String ID ="";
         Bundle extras = getIntent().getExtras();
 
+
+
         if (extras != null) {
             ID = getIntent().getStringExtra("ID");
             try {
-                api.getUserById(Integer.parseInt(ID), new Callback<Utilisateur>() {
+                api.getGameById(Integer.parseInt(ID), new Callback<Jeu>() {
                     @Override
-                    public void success(Utilisateur utilisateur, Response response) {
+                    public void success(Jeu jeu, Response response) {
+
                         //ADD ID
-                        TextView tbID = (TextView) findViewById(R.id.tbUserID);
-                        tbID.setText(String.valueOf(utilisateur.getID_UTILISATEUR()));
-                        //ADD LOGIN
-                        EditText tbLogin = (EditText) findViewById(R.id.tbLogin);
-                        tbLogin.setText(utilisateur.getLOGIN());
-                        //ADD PASSWORD
-                        EditText  tbPassword = (EditText) findViewById(R.id.tbPassword);
-                        tbPassword.setText(utilisateur.getPASSWORD());
+                        TextView tbID = (TextView) findViewById(R.id.tbIdJeu);
+                        tbID.setText(String.valueOf(jeu.getIdJeu()));
+                        //ADD NAME
+                        TextView tbNomJeu = (TextView) findViewById(R.id.tbNomJeu);
+                        tbNomJeu.setText(jeu.getNomJeu());
+                        // ADD GENRE
+                        TextView tbGenreJeu = (TextView) findViewById(R.id.tbGenreJeu);
+                        tbGenreJeu.setText(jeu.getGenre().toString());
+                        // ADD EDITOR
+                        TextView tbEditeurJeu = (TextView) findViewById(R.id.tbEditeurJeu);
+                        tbEditeurJeu.setText(jeu.getEditeur().toString());
                     }
 
                     @Override
@@ -59,10 +65,10 @@ public class UserInformation extends ActionBarActivity {
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utilisateur modifiedUser = new Utilisateur(Integer.parseInt(userID),((EditText) findViewById(R.id.tbLogin)).getText().toString(),((EditText) findViewById(R.id.tbPassword)).getText().toString());
-                api.updateUser(modifiedUser, new Callback<Utilisateur>() {
+                Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
+                api.updateEditor(modifiedUser, new Callback<Editeur>() {
                     @Override
-                    public void success(Utilisateur utilisateur, Response response) {
+                    public void success(Editeur utilisateur, Response response) {
 
                     }
 
@@ -78,22 +84,22 @@ public class UserInformation extends ActionBarActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(userID != "" && userID != null)
+                {
+                    api.deleteGame(Integer.parseInt(userID), new Callback<String>() {
+                        @Override
+                        public void success(String s, Response response) {
 
-                api.deleteUser(Integer.parseInt(userID), new Callback<String>() {
-                    @Override
-                    public void success(String s, Response response) {
+                        }
 
-                    }
+                        @Override
+                        public void failure(RetrofitError error) {
 
-                    @Override
-                    public void failure(RetrofitError error) {
-
-                    }
-                });
-
+                        }
+                    });
+                }
             }
         });
-
 
     }
 

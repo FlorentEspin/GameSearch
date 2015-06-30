@@ -70,6 +70,27 @@ public class StartScreen extends ActionBarActivity {
             }
         });
 
+        final Button listeEditeur = (Button) findViewById(R.id.btnEditeur);
+        listeEditeur.setTypeface(custom_font);
+        listeEditeur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUtilisateurs = new Intent(StartScreen.this, Liste_Editor.class);
+                startActivity(intentUtilisateurs);
+            }
+        });
+
+        final Button listeGenre = (Button) findViewById(R.id.btnGenre);
+        listeGenre.setTypeface(custom_font);
+        listeGenre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUtilisateurs = new Intent(StartScreen.this, List_Genre.class);
+                startActivity(intentUtilisateurs);
+            }
+        });
+
+
 
     }
 

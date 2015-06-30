@@ -37,12 +37,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/EditeurJeu"
         android:id="@+id/textView3" />
-
-    <EditText
+    <!-- A RecyclerView with some commonly used attributes -->
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recyclerViewGameInformationEditeur"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tbEditeurJeu"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="58dp"
+        tools:context=".MainActivity"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,11 +65,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/GenreJeu"
         android:id="@+id/textView" />
-
-    <EditText
+    <!-- A RecyclerView with some commonly used attributes -->
+    <android.support.v7.widget.RecyclerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recyclerViewGameInformationGenre"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tbGenreJeu" />
+        android:layout_height="48dp"
+        tools:context=".MainActivity"
+        />
 
     <Button
         android:layout_width="wrap_content"

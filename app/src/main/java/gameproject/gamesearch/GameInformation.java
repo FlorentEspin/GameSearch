@@ -2,6 +2,9 @@ package gameproject.gamesearch;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
+import gameproject.gamesearch.recyclerview.ListKingAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -25,7 +30,11 @@ public class GameInformation extends ActionBarActivity {
 
         String ID ="";
         Bundle extras = getIntent().getExtras();
+        final RecyclerView recyclerViewGenre = (RecyclerView) findViewById(R.id.recyclerViewGameInformationGenre);
+        recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this));
 
+        final RecyclerView recyclerViewEditeur = (RecyclerView) findViewById(R.id.recyclerViewGameInformationEditeur);
+        recyclerViewEditeur.setLayoutManager(new LinearLayoutManager(this));
 
 
         if (extras != null) {
@@ -41,6 +50,14 @@ public class GameInformation extends ActionBarActivity {
                         //ADD NAME
                         EditText tbGameName = (EditText) findViewById(R.id.tbNomJeu);
                         tbGameName.setText(jeux.getNomJeu());
+
+                        ListKingAdaptator mAdapterGenre = new ListKingAdaptator(jeux.getGenre());
+                        recyclerViewGenre.setAdapter(mAdapterGenre);
+                        recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
+
+                        ListEditorAdaptator mAdapterEditeur = new ListEditorAdaptator(jeux.getEditeur());
+                        recyclerViewEditeur.setAdapter(mAdapterEditeur);
+                        recyclerViewEditeur.setItemAnimator(new DefaultItemAnimator());
                     }
 
                     @Override

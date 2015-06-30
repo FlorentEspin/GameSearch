@@ -16,7 +16,6 @@
         android:textColor="@color/White"
         android:textSize="28dp"
         android:id="@+id/titre"
-
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/tbGameName"
@@ -27,22 +26,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/recyclerViewUser"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="350dp"
         tools:context=".MainActivity"
-        android:layout_below="@+id/btnRechercher"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="45dp" />
+        android:layout_below="@+id/btnRechercher" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tbGameName"
         android:background="@color/White"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="82dp" />
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/titre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -72,8 +71,7 @@
         android:textSize="14.1sp"
         android:id="@+id/btnCreateUser"
         android:layout_below="@+id/tbGameName"
-        android:layout_alignRight="@+id/tbGameName"
-        android:layout_alignEnd="@+id/tbGameName"
         android:layout_toRightOf="@+id/btnReinitialiser"
-        android:layout_toEndOf="@+id/btnReinitialiser" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

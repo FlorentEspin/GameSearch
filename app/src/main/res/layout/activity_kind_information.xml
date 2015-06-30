@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/KindName"
-        android:id="@+id/lblEditorName"
+        android:id="@+id/lblUserID"
         android:layout_marginTop="42dp"
         android:layout_below="@+id/lblKindID"
         android:layout_alignParentLeft="true"
@@ -54,8 +54,8 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/tbKindID"
         android:layout_alignTop="@+id/lblKindID"
-        android:layout_toRightOf="@+id/lblEditorName"
-        android:layout_toEndOf="@+id/lblEditorName"
+        android:layout_toRightOf="@+id/lblUserID"
+        android:layout_toEndOf="@+id/lblUserID"
         android:layout_marginLeft="34dp"
         android:layout_marginStart="34dp" />
 
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tbKindName"
-        android:layout_alignTop="@+id/lblEditorName"
+        android:layout_alignTop="@+id/lblUserID"
         android:layout_alignLeft="@+id/tbKindID"
         android:layout_alignStart="@+id/tbKindID" />
 

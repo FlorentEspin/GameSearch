@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,6 +21,8 @@ public class UserInformation extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_information);
+        final Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+
         Create request = new Create();
         final CRUD api=   request.getApiService();
 
@@ -35,12 +38,19 @@ public class UserInformation extends ActionBarActivity {
                         //ADD ID
                         TextView tbID = (TextView) findViewById(R.id.tbUserID);
                         tbID.setText(String.valueOf(utilisateur.getID_UTILISATEUR()));
+                        TextView idUser = (TextView) findViewById(R.id.lblUserID);
+                        tbID.setTypeface(custom_font);
+                        idUser.setTypeface(custom_font);
+
                         //ADD LOGIN
                         EditText tbLogin = (EditText) findViewById(R.id.tbLogin);
                         tbLogin.setText(utilisateur.getLOGIN());
+
+                        tbLogin.setTypeface(custom_font);
                         //ADD PASSWORD
                         EditText  tbPassword = (EditText) findViewById(R.id.tbPassword);
                         tbPassword.setText(utilisateur.getPASSWORD());
+                        tbPassword.setTypeface(custom_font);
                     }
 
                     @Override
@@ -56,6 +66,7 @@ public class UserInformation extends ActionBarActivity {
         }
         final String userID = getIntent().getStringExtra("ID");
         final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        btnModify.setTypeface(custom_font);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +86,7 @@ public class UserInformation extends ActionBarActivity {
             }
         });
         final Button btnDelete = (Button) findViewById(R.id.btnDeleteJeu);
+        btnDelete.setTypeface(custom_font);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

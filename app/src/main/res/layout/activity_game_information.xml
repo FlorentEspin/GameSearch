@@ -23,6 +23,8 @@
         android:layout_toRightOf="@+id/lblGenreJeu"
         android:layout_toEndOf="@+id/lblGenreJeu" />
 
+
+
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"

@@ -72,6 +72,10 @@
             android:name=".recyclerview.CreateEditor"
             android:label="@string/title_activity_create_editor" >
         </activity>
+        <activity
+            android:name=".CreateGenre"
+            android:label="@string/title_activity_create_genre" >
+        </activity>
     </application>
 
 </manifest>

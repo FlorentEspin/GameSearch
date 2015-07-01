@@ -1,5 +1,7 @@
 package gameproject.gamesearch;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -7,9 +9,16 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import gameproject.gamesearch.recyclerview.CreateEditor;
+import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
 import gameproject.gamesearch.recyclerview.ListKingAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -41,6 +50,74 @@ public class List_Genre extends ActionBarActivity {
                 @Override
                 public void failure(RetrofitError error) {
 
+                }
+            });
+
+            //Add event on buttons
+            final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiserGenre);
+            //   btnReinitialiser.setTypeface(custom_font);
+            btnReinitialiser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    api.getAllKind(new Callback<ArrayList<Genre>>() {
+                        @Override
+                        public void success(ArrayList<Genre> Genre, Response response) {
+                            ListKingAdaptator mAdapter = new ListKingAdaptator(Genre);
+                            recyclerView.setAdapter(mAdapter);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+
+                        }
+                    });
+                }
+            });
+
+
+            final Button btnFindUser = (Button) findViewById(R.id.btnRechercheGenre);
+            //     btnFindUser.setTypeface(custom_font);
+            btnFindUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(final View v) {
+                    final List<Genre> Genres = new ArrayList<Genre>();
+                    //   if(((EditText) findViewById(R.id.tbNomJeu)).getText().toString()!= "" && ((EditText) findViewById(R.id.tbUserName)).getText().toString()!= null)
+                    api.getKindByName(((EditText) findViewById(R.id.tbRechercheGenre)).getText().toString(), new Callback<Genre>() {
+                        @Override
+                        public void success(Genre Genre, Response response) {
+
+                            Genres.add(Genre);
+                            ListKingAdaptator mAdapter = new ListKingAdaptator(Genres);
+                            recyclerView.setAdapter(mAdapter);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        }
+
+                        @Override
+                        public void failure(RetrofitError error) {
+                            //create a toast to notify that the user has not found
+                            Context context = v.getContext();
+                            CharSequence text = (CharSequence) "Utilsateur non trouvé";
+                            int duration = Toast.LENGTH_SHORT;
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
+                    });
+                }
+            });
+
+            final Button btnCreateUser = (Button) findViewById(R.id.btnCreateEditor);
+            //       btnCreateUser.setTypeface(custom_font);
+            btnCreateUser.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    try {
+                        Context context = v.getContext();
+                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateEditor.class);
+                        context.startActivity(intentUtilisateurs);
+                    } catch (Exception e) {
+                        e.toString();
+                    }
                 }
             });
 

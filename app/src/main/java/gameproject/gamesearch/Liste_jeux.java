@@ -100,7 +100,7 @@ public class Liste_jeux extends Activity {
                             public void failure(RetrofitError error) {
                                 //create a toast to notify that the user has not found
                                 Context context = v.getContext();
-                                CharSequence text = (CharSequence) "Utilsateur non trouvé";
+                                CharSequence text = (CharSequence) "Jeu non trouvé";
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();

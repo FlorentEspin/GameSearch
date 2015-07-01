@@ -97,7 +97,7 @@ public class Liste_Editor extends ActionBarActivity {
                             public void failure(RetrofitError error) {
                                 //create a toast to notify that the user has not found
                                 Context context = v.getContext();
-                                CharSequence text = (CharSequence) "Utilsateur non trouvé";
+                                CharSequence text = (CharSequence) "Genre non trouvé";
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();
@@ -113,7 +113,7 @@ public class Liste_Editor extends ActionBarActivity {
                     public void onClick(View v) {
                         try {
                             Context context = v.getContext();
-                            Intent intentUtilisateurs = new Intent(v.getContext(), CreateEditor.class);
+                            Intent intentUtilisateurs = new Intent(v.getContext(), CreateGenre.class);
                             context.startActivity(intentUtilisateurs);
                         } catch (Exception e) {
                             e.toString();

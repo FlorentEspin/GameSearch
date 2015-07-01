@@ -21,6 +21,43 @@
         android:id="@+id/recyclerViewGenre"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity" />
+        tools:context=".MainActivity"
+        android:layout_below="@+id/btnRechercheGenre" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbRechercheGenre"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/recyclerViewGenre"
+        android:layout_alignEnd="@+id/recyclerViewGenre" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:id="@+id/btnRechercheGenre"
+        android:layout_below="@+id/tbRechercheGenre"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reinitialiser"
+        android:id="@+id/btnReinitialiserGenre"
+        android:layout_alignBottom="@+id/btnRechercheGenre"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Créer genre"
+        android:id="@+id/btnCreateGenre"
+        android:layout_alignBottom="@+id/btnReinitialiserGenre"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

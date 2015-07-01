@@ -27,10 +27,10 @@
         android:background="@color/Orange"
         android:id="@+id/button_jeux"
         android:textSize="25sp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="43dp"
         android:layout_below="@+id/titre"
-        android:layout_alignLeft="@+id/btnEditeur"
-        android:layout_alignStart="@+id/btnEditeur" />
+        android:layout_alignLeft="@+id/titre"
+        android:layout_alignStart="@+id/titre" />
 
     <Button
         android:layout_width="300dp"
@@ -39,10 +39,10 @@
         android:text="Liste  des  utilisateurs"
         android:id="@+id/button_utilisateurs"
         android:textSize="25sp"
+        android:layout_marginTop="36dp"
         android:layout_below="@+id/btnEditeur"
         android:layout_alignLeft="@+id/btnEditeur"
-        android:layout_alignStart="@+id/btnEditeur"
-        android:layout_marginTop="26dp" />
+        android:layout_alignStart="@+id/btnEditeur" />
 
     <Button
         android:layout_width="300dp"
@@ -51,9 +51,10 @@
         android:background="@color/Orange"
         android:id="@+id/btnGenre"
         android:textSize="25sp"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/btnEditeur"
-        android:layout_alignStart="@+id/btnEditeur" />
+        android:layout_below="@+id/button_jeux"
+        android:layout_alignLeft="@+id/button_jeux"
+        android:layout_alignStart="@+id/button_jeux"
+        android:layout_marginTop="45dp" />
 
     <Button
         android:layout_width="300dp"
@@ -62,7 +63,8 @@
         android:background="@color/Orange"
         android:id="@+id/btnEditeur"
         android:textSize="25sp"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/btnGenre"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp" />
+        android:layout_alignLeft="@+id/titre"
+        android:layout_alignStart="@+id/titre" />
 </RelativeLayout>

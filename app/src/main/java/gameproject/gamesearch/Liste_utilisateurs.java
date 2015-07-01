@@ -59,7 +59,7 @@ public class Liste_utilisateurs extends Activity {
 
 
             //Add event on buttons
-            final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiser);
+            final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiserUser);
             btnReinitialiser.setTypeface(custom_font);
             btnReinitialiser.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,14 +81,14 @@ public class Liste_utilisateurs extends Activity {
             });
 
 
-            final Button btnFindUser = (Button) findViewById(R.id.btnRechercher);
+            final Button btnFindUser = (Button) findViewById(R.id.btnRechercherUser);
             btnFindUser.setTypeface(custom_font);
             btnFindUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
                     final List<Utilisateur> users = new ArrayList<Utilisateur>();
-                    if(((EditText) findViewById(R.id.tbGameName)).getText().toString()!= "" && ((EditText) findViewById(R.id.tbGameName)).getText().toString()!= null)
-                    api.getUserByName(((EditText) findViewById(R.id.tbGameName)).getText().toString(), new Callback<Utilisateur>() {
+                    if(((EditText) findViewById(R.id.tbUserName)).getText().toString()!= "" && ((EditText) findViewById(R.id.tbUserName)).getText().toString()!= null)
+                    api.getUserByName(((EditText) findViewById(R.id.tbUserName)).getText().toString(), new Callback<Utilisateur>() {
                         @Override
                         public void success(Utilisateur utilisateur, Response response) {
 

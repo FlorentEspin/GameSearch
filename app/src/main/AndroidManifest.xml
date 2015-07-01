@@ -68,6 +68,10 @@
             android:name=".CreateUser"
             android:label="CreateUser" >
         </activity>
+        <activity
+            android:name=".recyclerview.CreateEditor"
+            android:label="@string/title_activity_create_editor" >
+        </activity>
     </application>
 
 </manifest>

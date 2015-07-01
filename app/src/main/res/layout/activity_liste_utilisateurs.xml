@@ -11,15 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Liste  des  utilisateurs"
+        android:text="Liste  des  utilisateur"
         android:layout_centerHorizontal="true"
         android:textColor="@color/White"
         android:textSize="28dp"
         android:id="@+id/titre"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/tbGameName"
-        android:layout_alignEnd="@+id/tbGameName" />
+        android:layout_alignRight="@+id/tbUserName"
+        android:layout_alignEnd="@+id/tbUserName" />
 
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,12 +31,12 @@
         tools:context=".MainActivity"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/btnRechercher" />
+        android:layout_below="@+id/btnRechercherUser" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbGameName"
+        android:id="@+id/tbUserName"
         android:background="@color/White"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/titre"
@@ -49,8 +49,8 @@
         android:layout_height="wrap_content"
         android:text="Rechercher"
         android:textSize="14.1sp"
-        android:id="@+id/btnRechercher"
-        android:layout_below="@+id/tbGameName"
+        android:id="@+id/btnRechercherUser"
+        android:layout_below="@+id/tbUserName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -59,10 +59,10 @@
         android:layout_height="wrap_content"
         android:text="Reinitialiser"
         android:textSize="14.1sp"
-        android:id="@+id/btnReinitialiser"
-        android:layout_alignTop="@+id/btnRechercher"
-        android:layout_toRightOf="@+id/btnRechercher"
-        android:layout_toEndOf="@+id/btnRechercher" />
+        android:id="@+id/btnReinitialiserUser"
+        android:layout_alignTop="@+id/btnRechercherUser"
+        android:layout_toRightOf="@+id/btnRechercherUser"
+        android:layout_toEndOf="@+id/btnRechercherUser" />
 
     <Button
         android:layout_width="wrap_content"
@@ -70,8 +70,8 @@
         android:text="Nouveau"
         android:textSize="14.1sp"
         android:id="@+id/btnCreateUser"
-        android:layout_below="@+id/tbGameName"
-        android:layout_toRightOf="@+id/btnReinitialiser"
+        android:layout_below="@+id/tbUserName"
+        android:layout_toRightOf="@+id/btnReinitialiserUser"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

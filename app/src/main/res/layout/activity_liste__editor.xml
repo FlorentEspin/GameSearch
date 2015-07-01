@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
+        android:text=""
         android:id="@+id/Editor"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
@@ -23,4 +23,41 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity"
         />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbRechercheEditor"
+        android:layout_alignTop="@+id/recyclerViewEditor"
+        android:layout_alignRight="@+id/Editor"
+        android:layout_alignEnd="@+id/Editor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:id="@+id/btnRechercherEditor"
+        android:layout_below="@+id/tbRechercheEditor"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reinitialiser"
+        android:id="@+id/btnReinitialiserEditor"
+        android:layout_alignTop="@+id/btnRechercherEditor"
+        android:layout_toLeftOf="@+id/btnCreateEditor"
+        android:layout_toStartOf="@+id/btnCreateEditor" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nouvel éditeur"
+        android:id="@+id/btnCreateEditor"
+        android:layout_alignBottom="@+id/btnReinitialiserEditor"
+        android:layout_alignRight="@+id/recyclerViewEditor"
+        android:layout_alignEnd="@+id/recyclerViewEditor" />
 </RelativeLayout>

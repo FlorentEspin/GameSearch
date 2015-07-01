@@ -26,4 +26,5 @@
     <string name="title_activity_kind_information">KindInformation</string>
     <string name="KindName">Nom du genre</string>
     <string name="KindID">ID du genre</string>
+    <string name="title_activity_create_editor">CreateEditor</string>
 </resources>

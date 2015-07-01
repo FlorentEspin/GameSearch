@@ -2,6 +2,7 @@ package gameproject.gamesearch.recyclerview;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import gameproject.gamesearch.R;
 
 public class ListGameAdaptator extends RecyclerView.Adapter<ListGameAdaptator.ViewHolder> {
     private List<Jeu> listJeu = new ArrayList<Jeu>();
+
 
     public ListGameAdaptator(List<Jeu> jeux) {
       this.listJeu = jeux;
@@ -69,9 +71,17 @@ public class ListGameAdaptator extends RecyclerView.Adapter<ListGameAdaptator.Vi
         public ViewHolder(final View itemLayoutView) {
             super(itemLayoutView);
             try {
+                // Ajout police
+                Typeface custom_font = Typeface.createFromAsset(itemLayoutView.getContext().getAssets(), "fonts/arcade.ttf");
+
                 txtViewTitle = (TextView) itemLayoutView.findViewById(R.id.item_title);
+                txtViewTitle.setTypeface(custom_font);
+
                 imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.item_icon);
+
                 ID = (TextView) itemLayoutView.findViewById(R.id.idBDD);
+                ID.setTypeface(custom_font);
+
                 // Handle item click and set the selection
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

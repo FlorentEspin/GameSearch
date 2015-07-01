@@ -25,10 +25,10 @@ public class StartScreen extends ActionBarActivity {
     //        public void success(ArrayList<Jeu> jeus, Response response) {
     //            jeus.size();
     //        }
-//
+    //
     //        @Override
     //        public void failure(RetrofitError error) {
-//
+    //
     //        }
     //    });
 

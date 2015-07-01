@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
 import gameproject.gamesearch.recyclerview.ListKingAdaptator;
@@ -25,6 +28,9 @@ public class GameInformation extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_information);
+        // Ajout police
+        final Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+
         Create request = new Create();
         final CRUD api=   request.getApiService();
 
@@ -47,9 +53,31 @@ public class GameInformation extends ActionBarActivity {
                         //ADD ID
                         TextView tbID = (TextView) findViewById(R.id.tbIDJeu);
                         tbID.setText(String.valueOf(jeux.getIdJeu()));
+                        tbID.setTypeface(custom_font);
                         //ADD NAME
                         EditText tbGameName = (EditText) findViewById(R.id.tbNomJeu);
                         tbGameName.setText(jeux.getNomJeu());
+                        tbGameName.setTypeface(custom_font);
+
+                        // Label ID JEU
+                        TextView lblID = (TextView) findViewById(R.id.lblIDJeu);
+                        lblID.setTypeface(custom_font);
+
+                        // Label NOM JEU
+                        TextView lblNomJeu = (TextView) findViewById(R.id.lblNomJeu);
+                        lblNomJeu.setTypeface(custom_font);
+
+                        // Label EDITEUR JEU
+                        TextView lblEditeurJeu = (TextView) findViewById(R.id.lblEditeurJeu);
+                        lblEditeurJeu.setTypeface(custom_font);
+
+                        // Label DATE JEU
+                        TextView lblDateJeu = (TextView) findViewById(R.id.lblDateJeu);
+                        lblDateJeu.setTypeface(custom_font);
+
+                        // Label GENRE JEU
+                        TextView lblGenreJeu = (TextView) findViewById(R.id.lblGenreJeu);
+                        lblGenreJeu.setTypeface(custom_font);
 
                         ListKingAdaptator mAdapterGenre = new ListKingAdaptator(jeux.getGenre());
                         recyclerViewGenre.setAdapter(mAdapterGenre);
@@ -73,6 +101,7 @@ public class GameInformation extends ActionBarActivity {
         }
         final String userID = getIntent().getStringExtra("ID");
         final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        btnModify.setTypeface(custom_font);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +121,7 @@ public class GameInformation extends ActionBarActivity {
             }
         });
         final Button btnDelete = (Button) findViewById(R.id.btnSupprimerJeu);
+        btnDelete.setTypeface(custom_font);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

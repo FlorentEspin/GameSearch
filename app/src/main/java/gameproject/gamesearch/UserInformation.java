@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -76,12 +78,23 @@ public class UserInformation extends ActionBarActivity {
                 api.updateUser(modifiedUser, new Callback<Utilisateur>() {
                     @Override
                     public void success(Utilisateur utilisateur, Response response) {
+                        CharSequence text = "Utilisateur modifie !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
+
+                        Intent intentUtilisateurs = new Intent(UserInformation.this, Liste_utilisateurs.class);
+                        startActivity(intentUtilisateurs);
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
+                        CharSequence text = "Edition impossible !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
                     }
                 });
 

@@ -1,7 +1,9 @@
 package gameproject.gamesearch.recyclerview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gameproject.gamesearch.Editeur;
+import gameproject.gamesearch.EditorInformation;
 import gameproject.gamesearch.GameInformation;
 import gameproject.gamesearch.Genre;
 import gameproject.gamesearch.KindInformation;
@@ -68,7 +71,6 @@ public class ListCheckKindAdaptator extends RecyclerView.Adapter<ListCheckKindAd
     	public TextView txtViewTitle;
         public ImageView imgViewIcon;
         public TextView ID;
-        public boolean isCheck;
 
         public ViewHolder(final View itemLayoutView) {
             super(itemLayoutView);
@@ -82,12 +84,20 @@ public class ListCheckKindAdaptator extends RecyclerView.Adapter<ListCheckKindAd
                     @Override
                     public void onClick(View v) {
                         Context context = itemView.getContext();
+                        CharSequence text = (CharSequence)   txtViewTitle.getText();
+                        Intent intentJeux = new Intent(context,EditorInformation.class);
+                        String IDjeu ="";
+                        Intent extras = ((Activity) context).getIntent();
+                        if (extras.getExtras() != null)
+                        {
+                            extras.putExtra("IDJEU", extras.getStringExtra("ID"));
+                        }
 
-                      CheckBox t = (CheckBox) itemLayoutView.findViewById(R.id.chkSelected);
-                        CharSequence text = (CharSequence)  String.valueOf(t.isChecked());
+                        intentJeux.putExtra("ID",ID.getText());
+                        context.startActivity(intentJeux);
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
-                       toast.show();
+                        toast.show();
 
                     }
                 });

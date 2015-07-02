@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -51,6 +53,13 @@ public class GameInformation extends ActionBarActivity {
                         EditText tbGameName = (EditText) findViewById(R.id.tbNomJeu);
                         tbGameName.setText(jeux.getNomJeu());
 
+                        DatePicker dtpJeu = (DatePicker) findViewById(R.id.dtpDateSortieJeu);
+                        if(!jeux.getDateDeSortieJeu().equals("")) {
+                            String[] parts = jeux.getDateDeSortieJeu().split("-");
+                            String[] parts2=  parts[2].split("T");
+                            dtpJeu.init(Integer.parseInt(parts[0]), Integer.parseInt(parts[1]), Integer.parseInt(parts2[0]),null);
+                        }
+
                         ListKindAdaptator mAdapterGenre = new ListKindAdaptator(jeux.getGenre());
                         recyclerViewGenre.setAdapter(mAdapterGenre);
                         recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
@@ -63,6 +72,21 @@ public class GameInformation extends ActionBarActivity {
                     @Override
                     public void failure(RetrofitError error) {
 
+                    }
+                });
+                final Button btnCreate = (Button) findViewById(R.id.btnAddEditeurGameInformation);
+                //       btnCreateUser.setTypeface(custom_font);
+                btnCreate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Intent intentJeux = new Intent(v.getContext(),EditorForGame.class);
+                            String testValue= ((TextView) findViewById(R.id.tbIDJeu)).getText().toString();
+                            intentJeux.putExtra("ID", ((TextView)findViewById(R.id.tbIDJeu)).getText().toString());
+                           v.getContext().startActivity(intentJeux);
+                        } catch (Exception e) {
+                            e.toString();
+                        }
                     }
                 });
             }

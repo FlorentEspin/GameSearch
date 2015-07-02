@@ -24,10 +24,10 @@
         android:text="Date de sortie"
         android:id="@+id/lblCreateDateSortieJeu" />
 
-    <CalendarView
-        android:layout_width="178dp"
-        android:layout_height="171dp"
-        android:id="@+id/dtpDate" />
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="205dp"
+        android:id="@+id/dtpGameCreateGame" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -38,46 +38,9 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
         android:id="@+id/tbDescriptifJeuCreateGame"
         android:text="e" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Editeur"
-        android:id="@+id/lblEditeurCreateGame" />
-
-    <ListView android:id="@+id/listView" android:layout_width="fill_parent"
-        android:layout_height="109dp" />
-
-    <android.support.v7.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/recyclerViewEditeurForGameInformation"
-        android:layout_width="match_parent"
-        android:layout_height="67dp"
-        tools:context=".MainActivity"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Genre"
-        android:id="@+id/lblGenreCreateGame" />
-    <android.support.v7.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/recyclerViewGenreForCreateGame"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        tools:context=".MainActivity"/>
-
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/datePicker" />
 
     <Button
         android:layout_width="wrap_content"

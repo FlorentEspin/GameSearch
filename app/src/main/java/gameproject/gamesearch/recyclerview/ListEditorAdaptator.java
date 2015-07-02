@@ -1,5 +1,6 @@
 package gameproject.gamesearch.recyclerview;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import gameproject.gamesearch.AddEditorToGame;
 import gameproject.gamesearch.Editeur;
 import gameproject.gamesearch.EditorInformation;
 import gameproject.gamesearch.R;
@@ -79,6 +81,12 @@ public class ListEditorAdaptator extends RecyclerView.Adapter<ListEditorAdaptato
                         CharSequence text = (CharSequence) txtViewTitle.getText();
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(context, text, duration);
+                        String IDjeu ="";
+                        Intent extras = ((Activity) context).getIntent();
+                        if (extras.getExtras() != null)
+                        {
+                            extras.putExtra("IDJEU", extras.getStringExtra("ID"));
+                        }
                         Intent intentJeux = new Intent(context,EditorInformation.class);
                         intentJeux.putExtra("ID",ID.getText());
                         context.startActivity(intentJeux);

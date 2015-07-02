@@ -116,7 +116,7 @@ public class Liste_jeux extends Activity {
                 public void onClick(View v) {
                     try {
                         Context context = v.getContext();
-                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateUser.class);
+                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateGame.class);
                         context.startActivity(intentUtilisateurs);
                     } catch (Exception e) {
                         e.toString();

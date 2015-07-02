@@ -13,7 +13,7 @@
         android:text="@string/IDJeu"
         android:id="@+id/lblIDJeu" />
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tbIDJeu"
@@ -32,6 +32,11 @@
         android:id="@+id/tbNomJeu"
         android:layout_gravity="center_horizontal" />
 
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="158dp"
+        android:id="@+id/dtpDateSortieJeu" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,17 +53,18 @@
         tools:context=".MainActivity"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ajouter un éditeur"
+        android:id="@+id/btnAddEditeurGameInformation" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/DateSortieJeu"
         android:id="@+id/lblDateJeu" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DateSortieJeu" />
 
     <TextView
         android:layout_width="wrap_content"

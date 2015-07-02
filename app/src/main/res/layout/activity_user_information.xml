@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnKindModify"
+        android:id="@+id/btnKindModifyKindInformation"
         android:layout_marginTop="28dp"
         android:textSize="20sp"
         android:background="@color/Orange"
@@ -93,10 +93,10 @@
         android:id="@+id/btnDeleteJeu"
         android:layout_marginTop="27dp"
         android:textSize="20sp"
-        android:layout_below="@+id/btnKindModify"
-        android:layout_alignLeft="@+id/btnKindModify"
-        android:layout_alignStart="@+id/btnKindModify"
-        android:layout_alignRight="@+id/btnKindModify"
-        android:layout_alignEnd="@+id/btnKindModify" />
+        android:layout_below="@+id/btnKindModifyKindInformation"
+        android:layout_alignLeft="@+id/btnKindModifyKindInformation"
+        android:layout_alignStart="@+id/btnKindModifyKindInformation"
+        android:layout_alignRight="@+id/btnKindModifyKindInformation"
+        android:layout_alignEnd="@+id/btnKindModifyKindInformation" />
 
 </RelativeLayout>

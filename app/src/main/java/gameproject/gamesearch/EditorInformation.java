@@ -36,10 +36,10 @@ public class EditorInformation extends ActionBarActivity {
                     public void success(Editeur editeur, Response response) {
 
                         //ADD ID
-                        TextView tbID = (TextView) findViewById(R.id.tbKindID);
+                        TextView tbID = (TextView) findViewById(R.id.tbIDEditorInformation);
                         tbID.setText(String.valueOf(editeur.getId()));
                         //ADD NAME
-                        EditText tbLogin = (EditText) findViewById(R.id.tbEditorName);
+                        EditText tbLogin = (EditText) findViewById(R.id.tbEditorNameEditorInformation);
                         tbLogin.setText(editeur.getNom());
                     }
 
@@ -55,11 +55,11 @@ public class EditorInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        final Button btnModify = (Button) findViewById(R.id.btnModifierEditorEditorInformation);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
+                Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorNameEditorInformation)).getText().toString());
                 api.updateEditor(modifiedUser, new Callback<Editeur>() {
                     @Override
                     public void success(Editeur utilisateur, Response response) {
@@ -74,7 +74,7 @@ public class EditorInformation extends ActionBarActivity {
 
             }
         });
-        final Button btnDelete = (Button) findViewById(R.id.btnDeleteEditor);
+        final Button btnDelete = (Button) findViewById(R.id.btnSupprimerEditorEditorInformation);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

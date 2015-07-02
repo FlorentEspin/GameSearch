@@ -37,10 +37,10 @@ public class KindInformation extends ActionBarActivity {
                     public void success(Genre Genre, Response response) {
 
                         //ADD ID
-                        TextView tbID = (TextView) findViewById(R.id.tbKindID);
+                        TextView tbID = (TextView) findViewById(R.id.tbKindIDKindInformation);
                         tbID.setText(String.valueOf(Genre.getIdGenre()));
                         //ADD NAME
-                        EditText tbLogin = (EditText) findViewById(R.id.tbKindName);
+                        EditText tbLogin = (EditText) findViewById(R.id.tbKindNameKindInformation);
                         tbLogin.setText(Genre.getNomGenre());
                     }
 
@@ -56,14 +56,14 @@ public class KindInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        final Button btnModify = (Button) findViewById(R.id.btnKindModifyKindInformation);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
-                api.updateEditor(modifiedUser, new Callback<Editeur>() {
+                Genre modifiedUser = new Genre(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbKindNameKindInformation)).getText().toString());
+                api.updateKind(modifiedUser, new Callback<Genre>() {
                     @Override
-                    public void success(Editeur Editeur, Response response) {
+                    public void success(Genre Genre, Response response) {
 
                     }
 
@@ -75,7 +75,7 @@ public class KindInformation extends ActionBarActivity {
 
             }
         });
-        final Button btnDelete = (Button) findViewById(R.id.btnDeleteKind);
+        final Button btnDelete = (Button) findViewById(R.id.btnDeleteKindKindInformation);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

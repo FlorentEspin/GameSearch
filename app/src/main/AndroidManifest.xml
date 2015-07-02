@@ -76,6 +76,10 @@
             android:name=".CreateGenre"
             android:label="@string/title_activity_create_genre" >
         </activity>
+        <activity
+            android:name=".CreateEditor"
+            android:label="@string/title_activity_create_editor" >
+        </activity>
     </application>
 
 </manifest>

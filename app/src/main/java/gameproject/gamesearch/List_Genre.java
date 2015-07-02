@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gameproject.gamesearch.recyclerview.CreateEditor;
-import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
-import gameproject.gamesearch.recyclerview.ListKingAdaptator;
+import gameproject.gamesearch.recyclerview.ListKindAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -42,7 +41,7 @@ public class List_Genre extends ActionBarActivity {
             api.getAllKind(new Callback<ArrayList<Genre>>() {
                 @Override
                 public void success(ArrayList<Genre> genres, Response response) {
-                    ListKingAdaptator mAdapter = new ListKingAdaptator(genres);
+                    ListKindAdaptator mAdapter = new ListKindAdaptator(genres);
                     recyclerView.setAdapter(mAdapter);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                 }
@@ -62,7 +61,7 @@ public class List_Genre extends ActionBarActivity {
                     api.getAllKind(new Callback<ArrayList<Genre>>() {
                         @Override
                         public void success(ArrayList<Genre> Genre, Response response) {
-                            ListKingAdaptator mAdapter = new ListKingAdaptator(Genre);
+                            ListKindAdaptator mAdapter = new ListKindAdaptator(Genre);
                             recyclerView.setAdapter(mAdapter);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
                         }
@@ -88,7 +87,7 @@ public class List_Genre extends ActionBarActivity {
                         public void success(Genre Genre, Response response) {
 
                             Genres.add(Genre);
-                            ListKingAdaptator mAdapter = new ListKingAdaptator(Genres);
+                            ListKindAdaptator mAdapter = new ListKindAdaptator(Genres);
                             recyclerView.setAdapter(mAdapter);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
                         }

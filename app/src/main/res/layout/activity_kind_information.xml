@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Modifier"
-        android:id="@+id/btnKindModify"
+        android:id="@+id/btnKindModifyKindInformation"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -21,17 +21,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Supprimer"
-        android:id="@+id/btnDeleteKind"
-        android:layout_alignBottom="@+id/btnKindModify"
-        android:layout_toRightOf="@+id/btnKindModify"
-        android:layout_toEndOf="@+id/btnKindModify" />
+        android:id="@+id/btnDeleteKindKindInformation"
+        android:layout_alignBottom="@+id/btnKindModifyKindInformation"
+        android:layout_toRightOf="@+id/btnKindModifyKindInformation"
+        android:layout_toEndOf="@+id/btnKindModifyKindInformation" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/KindID"
-        android:id="@+id/lblKindID"
+        android:id="@+id/lblKindIDKindInformation"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -44,27 +44,25 @@
         android:text="@string/KindName"
         android:id="@+id/lblUserID"
         android:layout_marginTop="42dp"
-        android:layout_below="@+id/lblKindID"
+        android:layout_below="@+id/lblKindIDKindInformation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbKindNameKindInformation"
+        android:layout_alignTop="@+id/lblUserID"
+        android:layout_toRightOf="@+id/lblUserID"
+        android:layout_toEndOf="@+id/lblUserID" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/tbKindID"
-        android:layout_alignTop="@+id/lblKindID"
-        android:layout_toRightOf="@+id/lblUserID"
-        android:layout_toEndOf="@+id/lblUserID"
-        android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tbKindName"
-        android:layout_alignTop="@+id/lblUserID"
-        android:layout_alignLeft="@+id/tbKindID"
-        android:layout_alignStart="@+id/tbKindID" />
+        android:id="@+id/tbKindIDKindInformation"
+        android:layout_above="@+id/lblUserID"
+        android:layout_toRightOf="@+id/btnKindModifyKindInformation"
+        android:layout_toEndOf="@+id/btnKindModifyKindInformation" />
 
 </RelativeLayout>

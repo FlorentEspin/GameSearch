@@ -2,88 +2,87 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="gameproject.gamesearch.GameInformation">
-
+    tools:context="gameproject.gamesearch.CreateGame"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/IDJeu"
-        android:id="@+id/lblIDJeu" />
+        android:text="Nom du jeu"
+        android:id="@+id/lblNomJeuCreateGame" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tbIDJeu"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/tbNomJeuCreateGame" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/NomJeu"
-        android:id="@+id/lblNomJeu" />
+        android:text="Date de sortie"
+        android:id="@+id/lblCreateDateSortieJeu" />
+
+    <CalendarView
+        android:layout_width="178dp"
+        android:layout_height="171dp"
+        android:id="@+id/dtpDate" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Descriptif"
+        android:id="@+id/lblDescriptifCreateGame" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tbNomJeu"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="32dp"
+        android:id="@+id/tbDescriptifJeuCreateGame"
+        android:text="e" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/EditeurJeu"
-        android:id="@+id/textView3" />
-    <!-- A RecyclerView with some commonly used attributes -->
+        android:text="Editeur"
+        android:id="@+id/lblEditeurCreateGame" />
+
+    <ListView android:id="@+id/listView" android:layout_width="fill_parent"
+        android:layout_height="109dp" />
+
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/recyclerViewGameInformationEditeur"
+        android:id="@+id/recyclerViewEditeurForGameInformation"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
-        tools:context=".MainActivity"
-        />
+        android:layout_height="67dp"
+        tools:context=".MainActivity"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/DateSortieJeu"
-        android:id="@+id/textView4" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DateSortieJeu" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/GenreJeu"
-        android:id="@+id/textView" />
-    <!-- A RecyclerView with some commonly used attributes -->
+        android:text="Genre"
+        android:id="@+id/lblGenreCreateGame" />
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/recyclerViewGameInformationGenre"
+        android:id="@+id/recyclerViewGenreForCreateGame"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        tools:context=".MainActivity"
-        />
+        android:layout_height="52dp"
+        tools:context=".MainActivity"/>
+
+    <DatePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modifier"
-        android:id="@+id/btnKindModifyKindInformation" />
+        android:text="Creer"
+        android:id="@+id/btnCreerCreateGame" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Supprimer"
-        android:id="@+id/btnSupprimerJeu" />
 </LinearLayout>

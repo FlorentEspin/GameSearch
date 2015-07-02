@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
-import gameproject.gamesearch.recyclerview.ListKingAdaptator;
+import gameproject.gamesearch.recyclerview.ListKindAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -51,7 +51,7 @@ public class GameInformation extends ActionBarActivity {
                         EditText tbGameName = (EditText) findViewById(R.id.tbNomJeu);
                         tbGameName.setText(jeux.getNomJeu());
 
-                        ListKingAdaptator mAdapterGenre = new ListKingAdaptator(jeux.getGenre());
+                        ListKindAdaptator mAdapterGenre = new ListKindAdaptator(jeux.getGenre());
                         recyclerViewGenre.setAdapter(mAdapterGenre);
                         recyclerViewGenre.setItemAnimator(new DefaultItemAnimator());
 
@@ -72,7 +72,7 @@ public class GameInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        final Button btnModify = (Button) findViewById(R.id.btnKindModifyKindInformation);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

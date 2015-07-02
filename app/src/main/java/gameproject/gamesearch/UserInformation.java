@@ -67,7 +67,7 @@ public class UserInformation extends ActionBarActivity {
             }
         }
         final String userID = getIntent().getStringExtra("ID");
-        final Button btnModify = (Button) findViewById(R.id.btnKindModify);
+        final Button btnModify = (Button) findViewById(R.id.btnKindModifyKindInformation);
         btnModify.setTypeface(custom_font);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override

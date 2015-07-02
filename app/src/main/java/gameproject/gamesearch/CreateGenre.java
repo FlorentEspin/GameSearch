@@ -1,5 +1,6 @@
     package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -31,12 +33,24 @@ import retrofit.client.Response;
                 api.createKind(genre, new Callback<Genre>() {
                     @Override
                     public void success(Genre nediteur, Response response) {
+                        CharSequence text = "Genre cree !";
+                        int duration = Toast.LENGTH_SHORT;
+
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
+
+                        Intent intentGenre = new Intent(CreateGenre.this, List_Genre.class);
+                        startActivity(intentGenre);
 
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
+                        CharSequence text = "Creation impossible !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
                     }
                 });
 

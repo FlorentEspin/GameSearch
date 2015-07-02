@@ -48,11 +48,11 @@ public class CreateGame extends ActionBarActivity {
 
         list =  (ListView)findViewById(R.id.listView);
 
-        // Création de la ArrayList qui nous permettra de remplir la listView
+        // Creation de la ArrayList qui nous permettra de remplir la listView
         final ArrayList<HashMap<String, String>> listItemEditeur = new ArrayList<HashMap<String, String>>();
 
 
-        //Utilisation de notre adaptateur qui se chargera de placer les valeurs de notre liste automatiquement et d'affecter un tag à nos checkbox
+        //Utilisation de notre adaptateur qui se chargera de placer les valeurs de notre liste automatiquement et d'affecter un tag a nos checkbox
 
 
 

@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -32,11 +34,22 @@ public class CreateUser extends ActionBarActivity {
                 api.createUtilisateur(createUser, new Callback<Utilisateur>() {
                     @Override
                     public void success(Utilisateur utilisateur, Response response) {
+                        CharSequence text = "Utilisateur cree !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
+
+                        Intent intentUtilisateurs = new Intent(CreateUser.this, Liste_utilisateurs.class);
+                        startActivity(intentUtilisateurs);
                     }
                     @Override
                     public void failure(RetrofitError error) {
+                        CharSequence text = "Creation impossible !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
                     }
                 });
 

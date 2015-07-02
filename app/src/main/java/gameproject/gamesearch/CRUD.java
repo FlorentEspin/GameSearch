@@ -82,5 +82,7 @@ public interface CRUD {
     public void createKind(@Body Genre aKind, Callback<Genre> cb);
     @POST("/api/Genres")
     public void updateKind(@Body Genre aKind, Callback<Genre> cb);
+    @DELETE("/api/Genres")
+    public void deleteKind(@Query("ID")int kindID, Callback<String> cb);
     //endregion
 }

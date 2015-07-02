@@ -7,30 +7,46 @@
     android:background="@drawable/background"
     tools:context="gameproject.gamesearch.Liste_jeux">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Liste  des  jeux"
+        android:textColor="@color/White"
+        android:textSize="28dp"
+        android:id="@+id/titre"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <!-- A RecyclerView with some commonly used attributes -->
     <android.support.v7.widget.RecyclerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/recyclerViewGame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="370dp"
         tools:context=".MainActivity"
-        android:layout_below="@+id/btnRechercherJeu" />
+        android:layout_below="@+id/btnRechercherJeu"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tbRechercheJeu"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/recyclerViewGame"
-        android:layout_alignEnd="@+id/recyclerViewGame"
+        android:background="@color/White"
+        android:layout_below="@+id/titre"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp"
+        android:layout_alignRight="@+id/recyclerViewGame"
+        android:layout_alignEnd="@+id/recyclerViewGame" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rechercher"
+        android:textSize="14.1sp"
         android:id="@+id/btnRechercherJeu"
         android:layout_below="@+id/tbRechercheJeu"
         android:layout_alignParentLeft="true"
@@ -39,7 +55,8 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Reinitialiser"
+        android:textSize="14.1sp"
         android:id="@+id/btnReinitialiserJeu"
         android:layout_alignBottom="@+id/btnRechercherJeu"
         android:layout_toRightOf="@+id/btnRechercherJeu"
@@ -48,9 +65,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer jeu"
+        android:text="Nouveau"
+        android:textSize="14.1sp"
         android:id="@+id/btnCreateGame"
         android:layout_alignBottom="@+id/btnReinitialiserJeu"
         android:layout_toRightOf="@+id/btnReinitialiserJeu"
-        android:layout_toEndOf="@+id/btnReinitialiserJeu" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

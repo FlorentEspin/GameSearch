@@ -36,8 +36,8 @@ public class Liste_jeux extends Activity {
         TextView titre = (TextView)findViewById(R.id.titre);
         Create request = new Create();
         final CRUD api=   request.getApiService();
-      //  Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
-      //  titre.setTypeface(custom_font);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+        titre.setTypeface(custom_font);
 //
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewGame);
@@ -58,7 +58,7 @@ public class Liste_jeux extends Activity {
             });
             //Add event on buttons
             final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiserJeu);
-         //   btnReinitialiser.setTypeface(custom_font);
+            btnReinitialiser.setTypeface(custom_font);
             btnReinitialiser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,7 +80,7 @@ public class Liste_jeux extends Activity {
 
 
             final Button btnFindUser = (Button) findViewById(R.id.btnRechercherJeu);
-       //     btnFindUser.setTypeface(custom_font);
+            btnFindUser.setTypeface(custom_font);
             btnFindUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(final View v) {
@@ -110,7 +110,7 @@ public class Liste_jeux extends Activity {
             });
 
             final Button btnCreateUser = (Button) findViewById(R.id.btnCreateGame);
-     //       btnCreateUser.setTypeface(custom_font);
+            btnCreateUser.setTypeface(custom_font);
             btnCreateUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

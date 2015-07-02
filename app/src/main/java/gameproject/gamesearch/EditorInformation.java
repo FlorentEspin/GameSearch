@@ -2,6 +2,9 @@ package gameproject.gamesearch;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,6 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import gameproject.gamesearch.recyclerview.ListGameAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -22,6 +30,8 @@ public class EditorInformation extends ActionBarActivity {
         setContentView(R.layout.activity_editor_information);
         Create request = new Create();
         final CRUD api=   request.getApiService();
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerViewGameEditorEditorInformation);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         String ID ="";
         Bundle extras = getIntent().getExtras();
@@ -48,7 +58,44 @@ public class EditorInformation extends ActionBarActivity {
 
                     }
                 });
-            }
+
+
+                if (extras != null) {
+                 final String IDEditeur = getIntent().getStringExtra("ID");
+                    final List<Jeu> lesJeux = new ArrayList<Jeu>();
+                   api.getAllGames(new Callback<ArrayList<Jeu>>() {
+                       @Override
+                       public void success(ArrayList<Jeu> jeus, Response response) {
+                           Iterator<Jeu> j = jeus.iterator();
+                           while (j.hasNext())
+                           {
+                               boolean needAdd=false;
+                               Jeu jeu = j.next();
+                               Iterator<Editeur> e = jeu.getEditeur().iterator();
+                               while (e.hasNext())
+                               {
+                                  Editeur editeur =  e.next();
+                                   if(IDEditeur.toString().equals(String.valueOf(editeur.getId())))
+                                   {
+                                        needAdd=true;
+                                   }
+                               }
+                               if(needAdd)lesJeux.add(jeu);
+
+                           }
+                           ListGameAdaptator mAdapter = new ListGameAdaptator(lesJeux);
+                           recyclerView.setAdapter(mAdapter);
+                           recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+                       }
+
+
+                       @Override
+                       public void failure(RetrofitError error) {
+
+                       }
+                   });
+            }}
             catch(Exception e)
             {
 

@@ -76,6 +76,14 @@
             android:name=".CreateEditeur"
             android:label="@string/title_activity_create_editeur" >
         </activity>
+        <activity
+            android:name=".EditorForGame"
+            android:label="@string/title_activity_editor_for_game" >
+        </activity>
+        <activity
+            android:name=".AddEditorToGame"
+            android:label="@string/title_activity_add_editor_to_game" >
+        </activity>
     </application>
 
 </manifest>

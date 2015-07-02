@@ -31,17 +31,17 @@ public class MyListAdapter extends SimpleAdapter
     @Override
     public View getView (int position, View convertView, ViewGroup parent)
     {
-        //Ce test permet de ne pas reconstruire la vue si elle est deja creee
+        //Ce test permet de ne pas reconstruire la vue si elle est déjà créée
         if (convertView == null)
         {
-            // On recupere les elements de notre vue
+            // On récupère les éléments de notre vue
             convertView = mInflater.inflate (R.layout.liste_detail, null);
-            // On recupere notre checkBox
+            // On récupère notre checkBox
             CheckBox cb = (CheckBox) convertView.findViewById (R.id.checkCreateGame);
 
 
             // On lui affecte un tag comportant la position de l'item afin de
-            // pouvoir le recuperer au clic de la checkbox
+            // pouvoir le récupérer au clic de la checkbox
           cb.setTag (position);
         }
         return super.getView (position, convertView, parent);

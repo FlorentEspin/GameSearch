@@ -92,7 +92,7 @@ public class CreateGame extends ActionBarActivity {
 
                 @Override
                 public void success(ArrayList<Genre> genres, Response response) {
-                    // On declare la HashMap qui contiendra les informations pour un item
+                    // On déclare la HashMap qui contiendra les informations pour un item
               HashMap map;
 
 
@@ -109,7 +109,7 @@ public class CreateGame extends ActionBarActivity {
                        R.layout.liste_detail, new String[] { "nom","prenom" }, new int[] {
                        R.id.nom, R.id.prenom });
 
-               // On attribue a notre listView l'adaptateur que l'on vient de creer
+               // On attribue à notre listView l'adaptateur que l'on vient de créer
                list.setAdapter(mSchedule);
 
 
@@ -191,7 +191,7 @@ i++;
 
     public void MyHandler(View v) {
         CheckBox cb = (CheckBox) v;
-        //on recupere la position a l'aide du tag defini dans la classe MyListAdapter
+        //on récupère la position à l'aide du tag défini dans la classe MyListAdapter
         int position = Integer.parseInt(cb.getTag().toString());
         int posExistante =0;
         int transitionValue = 0;
@@ -209,7 +209,7 @@ i++;
         }
 
 
-        // On rzeupere l'element sur lequel on va changer la couleur
+        // On récupère l'élément sur lequel on va changer la couleur
         View o = list.getChildAt(position).findViewById(
                 R.id.blocCheck);
 

@@ -58,6 +58,7 @@ public class Liste_jeux extends Activity {
             });
             //Add event on buttons
             final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiserJeu);
+            final TextView champRecherche = (TextView) findViewById(R.id.tbRechercheJeu);
             btnReinitialiser.setTypeface(custom_font);
             btnReinitialiser.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,6 +69,7 @@ public class Liste_jeux extends Activity {
                             ListGameAdaptator mAdapter = new ListGameAdaptator(Jeu);
                             recyclerView.setAdapter(mAdapter);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            champRecherche.setText("");
                         }
 
                         @Override

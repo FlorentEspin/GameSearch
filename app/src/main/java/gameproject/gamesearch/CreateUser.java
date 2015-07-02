@@ -2,6 +2,7 @@ package gameproject.gamesearch;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit.Callback;
@@ -22,10 +24,19 @@ public class CreateUser extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
+        final Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/arcade.ttf");
+
+
+        TextView loginLabel = (TextView) findViewById(R.id.lblLoginCreate);
+        loginLabel.setTypeface(custom_font);
+
+        TextView passwordLabel = (TextView) findViewById(R.id.lblPasswordCreate);
+        passwordLabel.setTypeface(custom_font);
 
         Create request = new Create();
         final CRUD api=   request.getApiService();
         final Button btnCreateUser = (Button) findViewById(R.id.btnValidateCreate);
+        btnCreateUser.setTypeface(custom_font);
         btnCreateUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

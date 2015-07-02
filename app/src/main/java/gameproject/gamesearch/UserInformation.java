@@ -106,10 +106,26 @@ public class UserInformation extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
+                CharSequence text = "Utilisateur supprime !";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                valitoast.show();
+
+                Intent intentUtilisateurs = new Intent(UserInformation.this, Liste_utilisateurs.class);
+                startActivity(intentUtilisateurs);
+
                 api.deleteUser(Integer.parseInt(userID), new Callback<String>() {
                     @Override
                     public void success(String s, Response response) {
+                        CharSequence text = "Utilisateur supprime !";
+                        int duration = Toast.LENGTH_SHORT;
 
+                        Toast valitoast = Toast.makeText(getApplicationContext(),text,duration);
+                        valitoast.show();
+
+                        Intent intentUtilisateurs = new Intent(UserInformation.this, Liste_utilisateurs.class);
+                        startActivity(intentUtilisateurs);
                     }
 
                     @Override

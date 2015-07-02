@@ -60,6 +60,7 @@ public class Liste_utilisateurs extends Activity {
 
             //Add event on buttons
             final Button btnReinitialiser = (Button) findViewById(R.id.btnReinitialiserUser);
+            final TextView champRecherche = (TextView) findViewById(R.id.tbUserName);
             btnReinitialiser.setTypeface(custom_font);
             btnReinitialiser.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -70,6 +71,7 @@ public class Liste_utilisateurs extends Activity {
                             ListUserAdaptator mAdapter = new ListUserAdaptator(utilisateurs);
                             recyclerView.setAdapter(mAdapter);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            champRecherche.setText("");
                         }
 
                         @Override

@@ -34,9 +34,9 @@ public class MyListAdapter extends SimpleAdapter
         //Ce test permet de ne pas reconstruire la vue si elle est déjà créée
         if (convertView == null)
         {
-            // On récupère les éléments de notre vue
+            // On recupère les elements de notre vue
             convertView = mInflater.inflate (R.layout.liste_detail, null);
-            // On récupère notre checkBox
+            // On recupère notre checkBox
             CheckBox cb = (CheckBox) convertView.findViewById (R.id.checkCreateGame);
 
 

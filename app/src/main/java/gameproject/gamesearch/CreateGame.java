@@ -131,12 +131,17 @@ public class CreateGame extends ActionBarActivity {
 
 }
 /* BACKUP CREATEGAME RECYCLERVIEW CHECKBOX
+<<<<<<< Updated upstream
 
 
 
   final RecyclerView recyclerViewGenre = (RecyclerView) findViewById(R.id.recyclerViewGenreForCreateGame);
         recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this));
 
+=======
+  final RecyclerView recyclerViewGenre = (RecyclerView) findViewById(R.id.recyclerViewGenreForCreateGame);
+        recyclerViewGenre.setLayoutManager(new LinearLayoutManager(this));
+>>>>>>> Stashed changes
         final RecyclerView recyclerViewEditeur = (RecyclerView) findViewById(R.id.recyclerViewEditeurForGameInformation);
         recyclerViewEditeur.setLayoutManager(new LinearLayoutManager(this));
                       genreCheck.clear();
@@ -145,7 +150,10 @@ public class CreateGame extends ActionBarActivity {
                         Iterator<Editeur> editeurIterator = allEditeur.iterator();
                         int i =0;
                         int j = 0;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                          while (genreIterator.hasNext()) {
                          Genre e = genreIterator.next();
                     if(true)
@@ -155,7 +163,10 @@ public class CreateGame extends ActionBarActivity {
                       {
                         genreCheck.add(e);
                       }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
               }
 i++;
                  }
@@ -164,8 +175,11 @@ i++;
                             if(true)
                             {
                                // int erreur=recyclerViewEditeur.getAdapter().(j);
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
                 //            String yolo = ((View) recyclerViewEditeur.ge.findViewById(R.id.chkSelected)).getClass().toString();
                             if(true)
                             {
@@ -175,11 +189,17 @@ i++;
                                     editeurCheck.add(e);
                                 }
                             }
+<<<<<<< Updated upstream
 
                         }
                             j++;
                         }
 
+=======
+                        }
+                            j++;
+                        }
+>>>>>>> Stashed changes
                     ListEditorAdaptator mAdapterEditeur = new ListEditorAdaptator(editeurs);
                     recyclerViewEditeur.setAdapter(mAdapterEditeur);
                     recyclerViewEditeur.setItemAnimator(new DefaultItemAnimator());

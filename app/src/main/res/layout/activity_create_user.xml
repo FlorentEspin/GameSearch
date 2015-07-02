@@ -33,22 +33,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tbLoginCreate"
+        android:width="100dp"
+        android:background="@color/White"
         android:layout_alignTop="@+id/lblLoginCreate"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
+        android:width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/tbLPasswordCreate"
+        android:background="@color/White"
         android:layout_alignBottom="@+id/lblPasswordCreate"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer"
+        android:text="Creer"
+        android:textSize="20sp"
+        android:background="@color/Orange"
         android:id="@+id/btnValidateCreate"
-        android:layout_below="@+id/tbLPasswordCreate"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

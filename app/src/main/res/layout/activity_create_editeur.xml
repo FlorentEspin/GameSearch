@@ -4,15 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="gameproject.gamesearch.CreateGenre">
-
+    tools:context="gameproject.gamesearch.CreateEditeur">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/lblNomGenreCreateGenre"
+        android:text="@string/EditorName"
+        android:id="@+id/lblEditeurNomCreateEditeur"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -20,19 +19,21 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tbNomGenreCreateGenre"
-        android:layout_below="@+id/lblNomGenreCreateGenre"
+        android:id="@+id/tbEditorNameCreateEditor"
+        android:layout_below="@+id/lblEditeurNomCreateEditeur"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/lblNomGenreCreateGenre"
-        android:layout_alignEnd="@+id/lblNomGenreCreateGenre" />
+        android:layout_alignRight="@+id/lblEditeurNomCreateEditeur"
+        android:layout_alignEnd="@+id/lblEditeurNomCreateEditeur" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer genre"
-        android:id="@+id/btnCreerCreateGenre"
-        android:layout_below="@+id/tbNomGenreCreateGenre"
+        android:text="Creer"
+        android:id="@+id/btnCreerCreateEditeur"
+        android:layout_below="@+id/tbEditorNameCreateEditor"
+        android:layout_alignRight="@+id/tbEditorNameCreateEditor"
+        android:layout_alignEnd="@+id/tbEditorNameCreateEditor"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

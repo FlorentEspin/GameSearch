@@ -49,15 +49,16 @@
         android:text="Reinitialiser"
         android:id="@+id/btnReinitialiserEditor"
         android:layout_below="@+id/tbRechercheEditor"
-        android:layout_toLeftOf="@+id/btnCreateEditor"
-        android:layout_toStartOf="@+id/btnCreateEditor" />
+        android:layout_toRightOf="@+id/btnRechercherEditor"
+        android:layout_toEndOf="@+id/btnRechercherEditor" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="nouvel éditeur"
-        android:id="@+id/btnCreateEditor"
+        android:text="Creer editeur"
+        android:id="@+id/btnCreateEditorListeEditor"
         android:layout_below="@+id/tbRechercheEditor"
-        android:layout_alignRight="@+id/recyclerViewEditor"
-        android:layout_alignEnd="@+id/recyclerViewEditor" />
+        android:layout_toRightOf="@+id/btnReinitialiserEditor"
+        android:layout_toEndOf="@+id/btnReinitialiserEditor" />
+
 </RelativeLayout>

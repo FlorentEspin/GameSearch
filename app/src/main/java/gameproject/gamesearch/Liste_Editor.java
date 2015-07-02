@@ -17,10 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gameproject.gamesearch.recyclerview.CreateEditor;
 import gameproject.gamesearch.recyclerview.ListEditorAdaptator;
-import gameproject.gamesearch.recyclerview.ListGameAdaptator;
-import gameproject.gamesearch.recyclerview.ListUserAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -97,7 +94,7 @@ public class Liste_Editor extends ActionBarActivity {
                             public void failure(RetrofitError error) {
                                 //create a toast to notify that the user has not found
                                 Context context = v.getContext();
-                                CharSequence text = (CharSequence) "Genre non trouvé";
+                                CharSequence text = (CharSequence) "Genre non trouve";
                                 int duration = Toast.LENGTH_SHORT;
                                 Toast toast = Toast.makeText(context, text, duration);
                                 toast.show();
@@ -106,18 +103,15 @@ public class Liste_Editor extends ActionBarActivity {
                     }
                 });
 
-                final Button btnCreateUser = (Button) findViewById(R.id.btnCreateEditor);
+                final Button btnCreate = (Button) findViewById(R.id.btnCreateEditorListeEditor);
                 //       btnCreateUser.setTypeface(custom_font);
-                btnCreateUser.setOnClickListener(new View.OnClickListener() {
+                btnCreate.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        try {
                             Context context = v.getContext();
-                            Intent intentUtilisateurs = new Intent(v.getContext(), CreateGenre.class);
+                            Intent intentUtilisateurs = new Intent(v.getContext(), CreateEditeur.class);
                             context.startActivity(intentUtilisateurs);
-                        } catch (Exception e) {
-                            e.toString();
-                        }
+
                     }
                 });
             }

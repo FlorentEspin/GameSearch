@@ -17,7 +17,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import gameproject.gamesearch.recyclerview.CreateEditor;
 import gameproject.gamesearch.recyclerview.ListKindAdaptator;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -96,7 +95,7 @@ public class List_Genre extends ActionBarActivity {
                         public void failure(RetrofitError error) {
                             //create a toast to notify that the user has not found
                             Context context = v.getContext();
-                            CharSequence text = (CharSequence) "Utilsateur non trouvé";
+                            CharSequence text = (CharSequence) "Utilsateur non trouve";
                             int duration = Toast.LENGTH_SHORT;
                             Toast toast = Toast.makeText(context, text, duration);
                             toast.show();
@@ -105,23 +104,23 @@ public class List_Genre extends ActionBarActivity {
                 }
             });
 
-            final Button btnCreateUser = (Button) findViewById(R.id.btnCreateEditor);
-            //       btnCreateUser.setTypeface(custom_font);
-            btnCreateUser.setOnClickListener(new View.OnClickListener() {
+
+            final Button btnCreate = (Button) findViewById(R.id.btnCreerListGenre);
+            btnCreate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    try {
+
                         Context context = v.getContext();
-                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateEditor.class);
+                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateGenre.class);
                         context.startActivity(intentUtilisateurs);
-                    } catch (Exception e) {
-                        e.toString();
-                    }
+
                 }
             });
 
         }
-        catch (Exception e){}
+        catch (Exception e){
+            e.toString();
+        }
     }
 
     @Override

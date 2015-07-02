@@ -69,16 +69,12 @@
             android:label="CreateUser" >
         </activity>
         <activity
-            android:name=".recyclerview.CreateEditor"
-            android:label="@string/title_activity_create_editor" >
-        </activity>
-        <activity
             android:name=".CreateGenre"
             android:label="@string/title_activity_create_genre" >
         </activity>
         <activity
-            android:name=".CreateEditor"
-            android:label="@string/title_activity_create_editor" >
+            android:name=".CreateEditeur"
+            android:label="@string/title_activity_create_editeur" >
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-    package gameproject.gamesearch;
+package gameproject.gamesearch;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,24 +13,24 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-    public class CreateGenre extends ActionBarActivity {
+public class CreateEditeur extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_genre);
+        setContentView(R.layout.activity_create_editeur);
 
         Create request = new Create();
         final CRUD api=   request.getApiService();
-        final Button btnCreate = (Button) findViewById(R.id.btnCreerCreateGenre);
+        final Button btnCreate = (Button) findViewById(R.id.btnCreerCreateEditeur);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Genre genre = new Genre(-1, ((EditText) findViewById(R.id.tbNomGenreCreateGenre)).getText().toString());
+                Editeur editeur = new Editeur(-1, ((EditText) findViewById(R.id.tbEditorNameCreateEditor)).getText().toString());
 
-                api.createKind(genre, new Callback<Genre>() {
+                api.createEditor(editeur, new Callback<Editeur>() {
                     @Override
-                    public void success(Genre nediteur, Response response) {
+                    public void success(Editeur editeur, Response response) {
 
                     }
 
@@ -49,7 +49,7 @@ import retrofit.client.Response;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_create_genre, menu);
+        getMenuInflater().inflate(R.menu.menu_create_editeur, menu);
         return true;
     }
 

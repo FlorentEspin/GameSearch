@@ -54,10 +54,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer genre"
-        android:id="@+id/btnCreateGenre"
-        android:layout_alignBottom="@+id/btnReinitialiserGenre"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="Creer genre"
+        android:id="@+id/btnCreerListGenre"
+        android:layout_above="@+id/recyclerViewGenre"
+        android:layout_toRightOf="@+id/btnReinitialiserGenre"
+        android:layout_toEndOf="@+id/btnReinitialiserGenre" />
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -59,11 +60,13 @@ public class KindInformation extends ActionBarActivity {
         final Button btnModify = (Button) findViewById(R.id.btnKindModifyKindInformation);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 Genre modifiedUser = new Genre(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbKindNameKindInformation)).getText().toString());
                 api.updateKind(modifiedUser, new Callback<Genre>() {
                     @Override
                     public void success(Genre Genre, Response response) {
+                        Intent intentGenre = new Intent(v.getContext(), List_Genre.class);
+                        startActivity(intentGenre);
 
                     }
 
@@ -78,11 +81,13 @@ public class KindInformation extends ActionBarActivity {
         final Button btnDelete = (Button) findViewById(R.id.btnDeleteKindKindInformation);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 if (userID != "" && userID != null) {
                     api.deleteEditor(Integer.parseInt(userID), new Callback<String>() {
                         @Override
                         public void success(String s, Response response) {
+                            Intent intentGenre = new Intent(v.getContext(), List_Genre.class);
+                            startActivity(intentGenre);
 
                         }
 

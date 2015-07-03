@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -105,11 +106,13 @@ public class EditorInformation extends ActionBarActivity {
         final Button btnModify = (Button) findViewById(R.id.btnModifierEditorEditorInformation);
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 Editeur modifiedUser = new Editeur(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorNameEditorInformation)).getText().toString());
                 api.updateEditor(modifiedUser, new Callback<Editeur>() {
                     @Override
                     public void success(Editeur utilisateur, Response response) {
+                        Intent intentGenre = new Intent(v.getContext(), Liste_Editor.class);
+                        startActivity(intentGenre);
 
                     }
 
@@ -124,11 +127,13 @@ public class EditorInformation extends ActionBarActivity {
         final Button btnDelete = (Button) findViewById(R.id.btnSupprimerEditorEditorInformation);
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 if (userID != "" && userID != null) {
                     api.deleteEditor(Integer.parseInt(userID), new Callback<String>() {
                         @Override
                         public void success(String s, Response response) {
+                            Intent intentGenre = new Intent(v.getContext(), Liste_Editor.class);
+                            startActivity(intentGenre);
 
                         }
 

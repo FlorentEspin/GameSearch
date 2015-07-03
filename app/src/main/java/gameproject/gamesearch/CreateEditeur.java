@@ -1,5 +1,6 @@
 package gameproject.gamesearch;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,13 +26,14 @@ public class CreateEditeur extends ActionBarActivity {
         final Button btnCreate = (Button) findViewById(R.id.btnCreerCreateEditeur);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 Editeur editeur = new Editeur(-1, ((EditText) findViewById(R.id.tbEditorNameCreateEditor)).getText().toString());
 
                 api.createEditor(editeur, new Callback<Editeur>() {
                     @Override
                     public void success(Editeur editeur, Response response) {
-
+                        Intent intentGenre = new Intent(v.getContext(), Liste_Editor.class);
+                        startActivity(intentGenre);
                     }
 
                     @Override
@@ -39,6 +41,7 @@ public class CreateEditeur extends ActionBarActivity {
 
                     }
                 });
+
 
             }
 

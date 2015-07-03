@@ -84,6 +84,14 @@
             android:name=".AddEditorToGame"
             android:label="@string/title_activity_add_editor_to_game" >
         </activity>
+        <activity
+            android:name=".AddGenreToGame"
+            android:label="@string/title_activity_add_genre_to_game" >
+        </activity>
+        <activity
+            android:name=".GenreForGame"
+            android:label="@string/title_activity_genre_for_game" >
+        </activity>
     </application>
 
 </manifest>

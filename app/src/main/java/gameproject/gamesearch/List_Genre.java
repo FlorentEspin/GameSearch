@@ -106,21 +106,26 @@ public class List_Genre extends ActionBarActivity {
 
 
             final Button btnCreate = (Button) findViewById(R.id.btnCreerListGenre);
+            //       btnCreateUser.setTypeface(custom_font);
             btnCreate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                        Context context = v.getContext();
-                        Intent intentUtilisateurs = new Intent(v.getContext(), CreateGenre.class);
-                        context.startActivity(intentUtilisateurs);
+                    Context context = v.getContext();
+                    Intent intentUtilisateurs = new Intent(v.getContext(), CreateGenre.class);
+                    context.startActivity(intentUtilisateurs);
 
                 }
             });
+
 
         }
         catch (Exception e){
             e.toString();
         }
+    }
+    public void onBackPressed() {
+        Intent intent = new Intent(this,StartScreen.class);
+        startActivity(intent);
     }
 
     @Override

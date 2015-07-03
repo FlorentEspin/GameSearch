@@ -31,5 +31,7 @@
     <string name="title_activity_create_editeur">CreateEditeur</string>
     <string name="title_activity_editor_for_game">EditorForGame</string>
     <string name="title_activity_add_editor_to_game">AddEditorToGame</string>
+    <string name="title_activity_add_genre_to_game">AddGenreToGame</string>
+    <string name="title_activity_genre_for_game">GenreForGame</string>
 
 </resources>

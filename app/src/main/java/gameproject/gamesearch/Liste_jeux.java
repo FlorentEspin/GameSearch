@@ -131,6 +131,10 @@ public class Liste_jeux extends Activity {
         {e.toString();}
 
     }
+    public void onBackPressed() {
+        Intent intent = new Intent(this,StartScreen.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

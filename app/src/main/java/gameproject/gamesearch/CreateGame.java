@@ -70,14 +70,15 @@ public class CreateGame extends ActionBarActivity {
             //       btnCreateUser.setTypeface(custom_font);
             btnCreate.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(final View v) {
                     try {
 
                         Jeu creerJeu = new Jeu(-1,((EditText) findViewById(R.id.tbNomJeuCreateGame)).getText().toString(),constructDateFromDatePicker((DatePicker) findViewById(R.id.dtpGameCreateGame)),((EditText) findViewById(R.id.tbDescriptifJeuCreateGame)).getText().toString(),"",editeurCheck,genreCheck,0);
                         api.createGame(creerJeu, new Callback<Jeu>() {
                             @Override
                             public void success(Jeu jeu, Response response) {
-
+                                Intent intentGenre = new Intent(v.getContext(), Liste_jeux.class);
+                                startActivity(intentGenre);
                             }
 
                             @Override
@@ -85,6 +86,7 @@ public class CreateGame extends ActionBarActivity {
 
                             }
                         });
+
                     } catch (Exception e) {
                         e.toString();
                     }

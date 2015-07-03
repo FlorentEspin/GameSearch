@@ -117,6 +117,10 @@ public class Liste_Editor extends ActionBarActivity {
             }
         catch (Exception e){}
     }
+    public void onBackPressed() {
+        Intent intent = new Intent(this,StartScreen.class);
+        startActivity(intent);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

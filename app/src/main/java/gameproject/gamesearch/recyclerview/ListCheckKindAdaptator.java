@@ -16,6 +16,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import gameproject.gamesearch.AddEditorToGame;
+import gameproject.gamesearch.AddGenreToGame;
 import gameproject.gamesearch.Editeur;
 import gameproject.gamesearch.EditorInformation;
 import gameproject.gamesearch.GameInformation;
@@ -79,24 +81,23 @@ public class ListCheckKindAdaptator extends RecyclerView.Adapter<ListCheckKindAd
                 imgViewIcon = (ImageView) itemLayoutView.findViewById(R.id.item_icon);
                 ID = (TextView) itemLayoutView.findViewById(R.id.idBDD);
 
-                // Handle item click and set the selection
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Context context = itemView.getContext();
-                        CharSequence text = (CharSequence)   txtViewTitle.getText();
-                        Intent intentJeux = new Intent(context,EditorInformation.class);
+                        CharSequence text = (CharSequence) txtViewTitle.getText();
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(context, text, duration);
                         String IDjeu ="";
+                        Intent intentJeux = new Intent(context,AddGenreToGame.class);
                         Intent extras = ((Activity) context).getIntent();
                         if (extras.getExtras() != null)
                         {
-                            extras.putExtra("IDJEU", extras.getStringExtra("ID"));
+                            intentJeux.putExtra("IDJEU", extras.getStringExtra("ID"));
                         }
 
                         intentJeux.putExtra("ID",ID.getText());
                         context.startActivity(intentJeux);
-                        int duration = Toast.LENGTH_SHORT;
-                        Toast toast = Toast.makeText(context, text, duration);
                         toast.show();
 
                     }

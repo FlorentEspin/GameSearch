@@ -80,16 +80,34 @@ public class GameInformation extends ActionBarActivity {
                     @Override
                     public void onClick(View v) {
                         try {
-                            Intent intentJeux = new Intent(v.getContext(),EditorForGame.class);
+                            Intent intentJeux = new Intent(v.getContext(), EditorForGame.class);
+                            String testValue = ((TextView) findViewById(R.id.tbIDJeu)).getText().toString();
+                            intentJeux.putExtra("ID", ((TextView) findViewById(R.id.tbIDJeu)).getText().toString());
+                            v.getContext().startActivity(intentJeux);
+                        } catch (Exception e) {
+                            e.toString();
+                        }
+                    }
+                });
+
+                final Button btnGoToGenre = (Button) findViewById(R.id.btnAddGenreGameInformation);
+                //       btnCreateUser.setTypeface(custom_font);
+                btnGoToGenre.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try {
+                            Intent intentJeux = new Intent(v.getContext(),GenreForGame.class);
                             String testValue= ((TextView) findViewById(R.id.tbIDJeu)).getText().toString();
                             intentJeux.putExtra("ID", ((TextView)findViewById(R.id.tbIDJeu)).getText().toString());
-                           v.getContext().startActivity(intentJeux);
+                            v.getContext().startActivity(intentJeux);
                         } catch (Exception e) {
                             e.toString();
                         }
                     }
                 });
             }
+
+
             catch(Exception e)
             {
 
@@ -100,10 +118,25 @@ public class GameInformation extends ActionBarActivity {
         btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Jeu modifiedGame = new Jeu();//Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
-                api.UpdateGame(modifiedGame, new Callback<Jeu>() {
+              //  final Jeu modifiedGame = new Jeu(Integer.parseInt(userID), ((EditText) findViewById(R.id.tbEditorName)).getText().toString());
+                api.getGameById(Integer.parseInt(userID), new Callback<Jeu>() {
                     @Override
                     public void success(Jeu jeu, Response response) {
+                        jeu.setNomJeu(((EditText) findViewById(R.id.tbNomJeu)).getText().toString());
+                        String date = String.valueOf(((DatePicker) findViewById(R.id.dtpDateSortieJeu)).getYear()) +"-"+String.valueOf(((DatePicker) findViewById(R.id.dtpDateSortieJeu)).getDayOfMonth()+"-"+String.valueOf(((DatePicker) findViewById(R.id.dtpDateSortieJeu)).getDayOfMonth()));
+                        jeu.setDateDeSortieJeu(date);
+                        api.UpdateGame(jeu, new Callback<Jeu>() {
+                            @Override
+                            public void success(Jeu jeu, Response response) {
+
+                            }
+
+                            @Override
+                            public void failure(RetrofitError error) {
+
+                            }
+                        });
+
 
                     }
 
@@ -113,31 +146,16 @@ public class GameInformation extends ActionBarActivity {
                     }
                 });
 
+
             }
         });
-        final Button btnDelete = (Button) findViewById(R.id.btnSupprimerJeu);
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (userID != "" && userID != null) {
-                    api.deleteGame(Integer.parseInt(userID), new Callback<String>() {
-                        @Override
-                        public void success(String s, Response response) {
-
-                        }
-
-                        @Override
-                        public void failure(RetrofitError error) {
-
-                        }
-                    });
-                }
-            }
-        });
-
 
     }
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this,Liste_jeux.class);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
